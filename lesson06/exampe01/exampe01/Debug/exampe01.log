@@ -1,0 +1,4 @@
+﻿  Main.cpp
+e:\cstudy\linuxcpp\lesson06\exampe01\exampe01\main.cpp(8): warning C4101: “l”: 未引用的局部变量
+  exampe01.vcxproj -> E:\CStudy\LinuxCPP\lesson06\exampe01\Debug\exampe01.exe
+  exampe01.vcxproj -> E:\CStudy\LinuxCPP\lesson06\exampe01\Debug\exampe01.pdb (Full PDB)
