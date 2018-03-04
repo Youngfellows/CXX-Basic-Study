@@ -1,19 +1,19 @@
 #include<iostream>
-#include<cstring>
+#include<string>
 
 int main()
 {
-    const int size = 20;
-    char str1[size];
-    char *str2;
+    std::string str;
 
-    str2 = new char[size];//分配内存
-    char str3[] = "computer world";
+    std::cout << "请输入一个字符串:" << std::endl;
+    std::cin >> str;
 
-    strcpy_s(str1,str3);
+    std::cout << "str字符串的长度: length = " << str.length() << std::endl;
+    std::cout << str << std::endl;
 
-    std::cout << "str3 = " << str3 << std::endl;
-    std::cout << "str1 = " << str1 << std::endl;
+    str[3] = 'O';//修改某一个字符串
+    std::cout << "str字符串的长度: length = " << str.length() << std::endl;
+    std::cout << str << std::endl;
 
     return 0;
 }
