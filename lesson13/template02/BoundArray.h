@@ -29,12 +29,12 @@ template<typename T> BoundArray<T>::~BoundArray()
 
 template<typename T> const T & BoundArray<T>::getElement(int index) const
 {
-    return Array<T>::element[index];
+    return this->Array<T>::get(index);
 }
 
 template<typename T> void BoundArray<T>::putElement(int index,const T & value)
 {
-    Array<T>::putElement(index,value);
+    this->Array<T>::put(index,value);
 }
 
 #endif
