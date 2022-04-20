@@ -23,7 +23,13 @@ int main()
 	return 0;
 }
 
-//函数定义
+/**
+ * @brief 函数定义
+ * 
+ * @param pa 指针变量做函数的参数,即变量a的地址
+ * @param pb 指针变量做函数的参数,即变量b的地址
+ * @return int 
+ */
 int add(int *pa,int *pb)
 {
 	return *pa + *pb;

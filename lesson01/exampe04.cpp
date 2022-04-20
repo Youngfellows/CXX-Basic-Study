@@ -18,10 +18,10 @@ int main()
 	std::cout << "RED: " << c << std::endl;	
 	
 	c = BLUE;
-	std::cout << "RED: " << c << std::endl;	
+	std::cout << "BLUE: " << c << std::endl;	
 
 	c = WHITE;
-	std::cout << "RED: " << c << std::endl;	
+	std::cout << "WHITE: " << c << std::endl;	
 	
 	return 0;
 }

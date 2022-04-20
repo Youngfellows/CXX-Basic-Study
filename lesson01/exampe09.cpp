@@ -13,17 +13,21 @@ int main()
 
     std::cout << "请输入变量b:" << std::endl;
     std::cin >> b;
-
+    
+    std::cout << "交换前: &a = " << &a << "\t" << "&b = " << &b << std::endl;
     std::cout << "交换前: pa = " << pa << "\t" << "pb = " << pb << std::endl;
-    std::cout << "交换前: a = " << *pa << "\t" << "b = " << *pb << std::endl;
+    std::cout << "交换前: *pa = " << *pa << "\t" << "*pb = " << *pb << std::endl;
+    std::cout << "交换前: a = " << a << "\t" << "b = " << b << std::endl;
 
-    //交换两个变量的值--交换指针所指向的对象的值
+    //交换两个变量的值--交换指针所指向的对象的值,指针的指向不变化,只是对象的值变化了
     temp = *pa;
     *pa = *pb;
     *pb = temp;
 
+    std::cout << "交换后: &a = " << &a << "\t" << "&b = " << &b << std::endl;
     std::cout << "交换后: pa = " << pa << "\t" << "pb = " << pb << std::endl;
-    std::cout << "交换后: a = " << *pa << "\t" << "b = " << *pb << std::endl;
+    std::cout << "交换后: *pa = " << *pa << "\t" << "*pb = " << *pb << std::endl;
+    std::cout << "交换后: a = " << a << "\t" << "b = " << b << std::endl;
 
     return 0;
 }
