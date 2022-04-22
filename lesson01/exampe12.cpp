@@ -11,11 +11,16 @@ int main()
     // pv = &a;//pv赋初值
     // std::cout << "pv赋值后: " << pv << std::endl;
 
+    std::cout << "&a = " << &a << std::endl;
+    std::cout << "pi = " << pi << std::endl;
+    std::cout << "pv = " << pv << std::endl;
+    //std::cout << "*pv = " << *pv << std::endl;
+
     //指针类型转换
     std::cout << "*(int *)pv = " << *(int *)pv << std::endl;
     std::cout << "*(char *)pv = " << *(char *)pv << std::endl;
 
-    pi = (int *)pv;//向int *型指针赋值
+    pi = (int *)pv;//向int *型指针赋值,将void *指针变量转换为int *指针变量
     std::cout << "*pi = " << *pi << std::endl;
     std::cout << "a = " << a << std::endl;
 

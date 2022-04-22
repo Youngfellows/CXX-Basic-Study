@@ -52,7 +52,7 @@ int main()
           int *pj = &array[j];
           if (*pi > *pj) {
             int temp;
-            temp = *pi;
+            temp = *pi;//交换两个指针所指向的变量的值,指针的指向不变
             *pi = *pj;
             *pj = temp;
           }
