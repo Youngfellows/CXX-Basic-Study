@@ -20,7 +20,7 @@ void storyStrArray()
 {
     const int size = 5;
     const char *nameArray[size]
-    = {"张三","李四","王五","赵六","孙七"};
+    = {"张三","李四","王五","赵六","孙七"};//nameArray是一个数组,数组中的每一个元素是char *类型数据,也就是每一个元素都指向一个字符串
     //字符指针，每个元素指向一个字符串
 
     for(int i = 0; i < size; i++)
