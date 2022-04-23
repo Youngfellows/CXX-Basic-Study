@@ -1,3 +1,3 @@
 #pragma once
-double circleArea(double radius);//Ô²Ãæ»ı
-double rectArea(double width,double length);//¾ØĞÎÃæ»ı
+double circleArea(double radius);//åœ†é¢ç§¯
+double rectArea(double width,double length);//çŸ©å½¢é¢ç§¯

@@ -6,12 +6,12 @@ int main()
     //1.指针数组的元素类型是指针
     //2.指针数组的元素存放对象的地址
 
-    int *pArray[3];//定义指针数组pArray,数组元素存放int 型变量的地址
+    int *pArray[3];//定义指针数组pArray,数组元素存放int 型变量的地址,即每一个pArray元素是int *
     int a = 33;
     int b = 44;
     int c = 55;
 
-    //指针数组元素赋值
+    //指针数组元素赋值,把变量的地址赋值给指针数组元素
     pArray[0] = &a;
     pArray[1] = &b;
     pArray[2] = &c;
@@ -30,6 +30,7 @@ int main()
 
     for(int i = 0; i < 3;i++)
     {
+      //通过指针数组元素访问变量
       std::cout << *pArray[i] << " ";
     }
 

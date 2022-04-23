@@ -10,6 +10,7 @@ int main()
     std::cout << "请输入两个数x,y:" << std::endl;
     std::cin >> x >> y;
 
+    std::cout << "前: &x = " << &x << " ,&y = " << &y << std::endl;
     int max = *maxValue(&x,&y);
 
     std::cout << "maxVlue = " << maxValue(&x,&y) << " ,max = " << max << "\n";

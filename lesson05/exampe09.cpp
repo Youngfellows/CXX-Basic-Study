@@ -22,7 +22,8 @@ int main()
 
 //函数定义
 void test(int ap[],double bp[],char cp[])
-{
+{   
+    //返回的是一个int *指针的大小
     std::cout << "sizeof(ap) = " << sizeof(ap) << std::endl;
     std::cout << "sizeof(bp) = " << sizeof(bp) << std::endl;
     std::cout << "sizeof(cp) = " << sizeof(cp) << std::endl;
@@ -31,6 +32,7 @@ void test(int ap[],double bp[],char cp[])
 //函数定义
 void test1(int *ap,double *bp,char *cp)
 {
+    //返回的是一个int *指针的大小
     std::cout << "sizeof(ap) = " << sizeof(ap) << std::endl;
     std::cout << "sizeof(bp) = " << sizeof(bp) << std::endl;
     std::cout << "sizeof(cp) = " << sizeof(cp) << std::endl;

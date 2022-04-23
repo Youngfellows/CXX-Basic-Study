@@ -8,7 +8,7 @@ int main()
 {
     //函数重载
     double x,y,z,maxValue;
-    double *px,*py,*pz;//int *指针变量px,py,pz
+    double *px,*py,*pz;//double *指针变量px,py,pz
     px = &x;
     py = &y;
     pz = &z;

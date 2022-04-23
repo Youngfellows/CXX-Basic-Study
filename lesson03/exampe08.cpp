@@ -4,7 +4,7 @@
 int & maxValue(int &a,int &b);//函数声明
 
 //不应该返回局部变量的引用
-//int & f2Error();
+// int & f2Error();
 
 int main()
 {

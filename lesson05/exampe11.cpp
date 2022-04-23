@@ -35,7 +35,7 @@ void maopaoSort()
 
     for(int *p = array; p < array + size; p++)
     {
-        std::cout << *(p+1) << " ";
+        std::cout << *p << " ";
     }
     std::cout << std::endl;
 }

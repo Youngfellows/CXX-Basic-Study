@@ -15,7 +15,7 @@ int main()
 //函数定义
 void prime2()
 {
-  int i;
+   int i;
    long m;
 
    std::cout << "请输入一个数: ";

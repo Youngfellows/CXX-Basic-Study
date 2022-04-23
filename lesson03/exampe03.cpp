@@ -27,7 +27,7 @@ void func(int *p)
     int a = 3;
     *p = *p + a;
 
-    p = &a;//p指向a
+    p = &a;//p指向a,p从新指向变量a了,不再指向变量x,因此x的值不变化
     *p = a + 89;
 
     std::cout << "*p = " << *p << std::endl;
@@ -51,7 +51,7 @@ void func1(const int *p)
 //指针常量(指针的地址不可变)
 void func2(int * const p)
 {
-      int a = 3;
+    int a = 3;
     *p = *p + a;
 
     //p = &a;//p指向a

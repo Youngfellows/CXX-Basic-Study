@@ -26,7 +26,18 @@
         "array": "cpp",
         "stdexcept": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "cstdarg": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "system_error": "cpp",
+        "fstream": "cpp",
+        "numeric": "cpp",
+        "sstream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

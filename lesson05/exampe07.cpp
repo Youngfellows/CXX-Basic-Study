@@ -8,7 +8,7 @@ void printArray3();//以指针方式访问二维数组
 int main()
 {
     //以下标方式访问数组元素
-    //printArray();
+    printArray();
 
     //以指针方式访问二维数组
     printArray2();
@@ -80,8 +80,10 @@ void printArray2()
 {
    int a[3][4] = {{11,22,33,44},{55,66,77,88},{99,45,78,94}};//定义二维数组
 
+   std::cout << "以指针方式访问二维数组" << std::endl;
+
    std::cout << "a = " << a << std::endl;
-   std::cout << "*a = " << *a << std::endl;
+   std::cout << "*a = " << *a << std::endl;//二维数组首元素的地址
 
    std::cout << "1打印数组元素的地址: " << std::endl;
    for(int i = 0; i < 3;i++)
@@ -152,6 +154,7 @@ void printArray2()
  {
    int a[3][4] = {{11,22,33,44},{55,66,77,88},{99,45,78,94}};//定义二维数组
 
+   std::cout << "以下标方式访问数组元素" << std::endl;
    for(int i=0; i < 3; i++)
    {
      for(int j=0;j < 4;j++)
@@ -160,5 +163,5 @@ void printArray2()
      }
      std::cout << std::endl;
    }
-
+   std::cout << std::endl;
  }

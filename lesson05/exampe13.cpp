@@ -5,7 +5,7 @@
 int main()
 {
     int *p = NULL;
-    p = new int(89);//初始化存储区
+    p = new int(89);//初始化存储区,p指针变量指向89
 
     if(p == NULL)
     {

@@ -3,32 +3,31 @@
 #define FUNC_H
 const double PI = 3.1415926;
 
-//¾ØĞÎµÄÖÜ³¤
+//çŸ©å½¢çš„å‘¨é•¿
 double squareGirth(double l)
 {
 	return 4 * l;
 }
 
-//¾ØĞÎµÄÃæ»ı
+//çŸ©å½¢çš„é¢ç§¯
 double squareArea(double l)
 {
 	return l * l;
 }
 
-//Ô²µÄÖÜ³¤
+//åœ†çš„å‘¨é•¿
 double roundGirth(double r)
 {
 	return 2 * PI * r;
 }
 
-//Ô²µÄÃæ»ı
+//åœ†çš„é¢ç§¯
 double roundArea(double r)
 {
 	return PI * r * r;
 }
 
-//¶¨Òåº¯ÊıÀàĞÍ
+//å®šä¹‰å‡½æ•°ç±»å‹
 typedef double ft(double);
 
 #endif // !FUNC_H
-

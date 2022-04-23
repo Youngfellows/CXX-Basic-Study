@@ -3,26 +3,27 @@
 
 int main()
 {
-	std::cout << "ÇëÊäÈëÔ²µÄ°ë¾¶or±ß³¤: r = ";
-	double r;//°ë¾¶
-	double l;//±ß³¤
+	std::cout << "è¯·è¾“å…¥åœ†çš„åŠå¾„orè¾¹é•¿: r = ";
+	double r;//åŠå¾„
+	double l;//è¾¹é•¿
 
-	ft *pfun[4];//¶¨ÒåÖ¸Ïòº¯ÊıµÄÖ¸ÕëÊı×épfun
+	ft *pfun[4];//å®šä¹‰æŒ‡å‘å‡½æ•°çš„æŒ‡é’ˆæ•°ç»„pfun,pfunæ˜¯ä¸€ä¸ªæ•°ç»„,æ•°ç»„ä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ æ˜¯ftå‡½æ•°æŒ‡é’ˆ,å³fpæŒ‡å‘å‡½æ•°
 
-	pfun[0] = squareGirth;//pfun[0]±£´æº¯ÊısquareGirthµÄµØÖ·
-	pfun[1] = squareArea;//pfun[1]±£´æº¯ÊısquareAreaµÄµØÖ·
-	pfun[2] = roundGirth;//pfun[2]±£´æº¯ÊıroundGirthµÄµØÖ·
-	pfun[3] = roundArea;//pfun[3]±£´æº¯ÊıroundAreaµÄµØÖ·
+	pfun[0] = squareGirth;//pfun[0]ä¿å­˜å‡½æ•°squareGirthçš„åœ°å€
+	pfun[1] = squareArea;//pfun[1]ä¿å­˜å‡½æ•°squareAreaçš„åœ°å€
+	pfun[2] = roundGirth;//pfun[2]ä¿å­˜å‡½æ•°roundGirthçš„åœ°å€
+	pfun[3] = roundArea;//pfun[3]ä¿å­˜å‡½æ•°roundAreaçš„åœ°å€
 
 	std::cin >> r;
 	for (int i=0; i < 4;i++)
 	{
+		//é€šè¿‡å‡½æ•°æŒ‡é’ˆè°ƒç”¨å‡½æ•°
 		std::cout << (*pfun[i])(r) << std::endl;
 	}
 
 	std::cout << std::endl;
 	for (int i = 0; i < 4; i++)
-	{
+	{	//æœªçŸ¥ï¼Ÿ
 		std::cout << (pfun[i])(r) << std::endl;
 	}
 	system("pause");

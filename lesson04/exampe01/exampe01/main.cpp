@@ -3,18 +3,18 @@
 
 int main()
 {
-	double r;//°ë¾¶
-	double width, length;//¿í¡¢³¤
+	double r;//åŠå¾„
+	double width, length;//å®½ã€é•¿
 
-	std::cout << "ÇëÊäÈëÔ²µÄ°ë¾¶: " << std::endl;
+	std::cout << "è¯·è¾“å…¥åœ†çš„åŠå¾„: " << std::endl;
 	std::cin >> r;
 
-	std::cout << "Ô²µÄÃæ»ı: " << circleArea(r) << std::endl;
+	std::cout << "åœ†çš„é¢ç§¯: " << circleArea(r) << std::endl;
 
 
-	std::cout << "ÇëÊäÈë³¤¡¢¿í: " << std::endl;
+	std::cout << "è¯·è¾“å…¥é•¿ã€å®½: " << std::endl;
 	std::cin >> length >> width;
-	std::cout << "¾ØĞÎµÄÃæ»ıÊÇ: " << rectArea(width,length) << std::endl;
+	std::cout << "çŸ©å½¢çš„é¢ç§¯æ˜¯: " << rectArea(width,length) << std::endl;
 
 	system("pause");
 	return 0;

@@ -6,7 +6,7 @@ int main()
     const  int size = 10;
     int *pArray = NULL;
     int *p;
-    pArray = new int[10];//用new建立动态数组
+    pArray = new int[size];//用new建立动态数组
 
     if(pArray == NULL)
     {
