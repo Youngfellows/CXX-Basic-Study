@@ -2,7 +2,7 @@
 
 //冒泡排序法的函数模板 
 template <typename ElementType>
-ElementType*  sortBubble(ElementType *a, int size)
+ElementType* sortBubble(ElementType *a, int size)
 {
     ElementType  temp;
     //排序

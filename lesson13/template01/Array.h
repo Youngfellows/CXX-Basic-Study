@@ -10,7 +10,7 @@ class Array
 {
     protected: 
         int size;//数组大小
-        T *element;//类型是T * 的指针数组
+        T *element;;//类型是指针变量T * ,即是一个数组
 
     public: 
         Array(int s);
@@ -33,7 +33,7 @@ template<typename T> Array<T>::Array(int s)
         this->size = 1;
     }
 
-    element = new T[size];//对象数组
+    element = new T[size];//对象数组,指针变量指向数组元素的首地址
 }
 
 //析构函数

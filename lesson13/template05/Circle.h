@@ -13,12 +13,12 @@ class Circle
     static int total;//类模板的静态数据成员 -- 总数
 
     public: 
-    Circle(T radius);
-    ~Circle();
-    void setRadius(T radius = 0);
-    T getRadius();
-    double getGirth();//周长
-    double getArea();//面积
+        Circle(T radius);
+        ~Circle();
+        void setRadius(T radius = 0);
+        T getRadius();
+        double getGirth();//周长
+        double getArea();//面积
     
     static int showTotal();//类模板的静态成员函数
 
@@ -35,13 +35,14 @@ template<typename T> int Circle<T>::showTotal()
 
 template<typename T> Circle<T>::Circle(T radius)
 {
+    std::cout << "Circle()构造函数" << std::endl;
     this->radius = radius;
     total++;
 }
 
 template<typename T> Circle<T>::~Circle()
 {
-   
+     std::cout << "~Circle()析构函数" << std::endl;
 }
 
 //模板函数

@@ -1,5 +1,6 @@
 #include<iostream>
 
+//求最大值的函数模板
 template<typename T>
 T max(const T a,const T b)
 {

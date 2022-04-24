@@ -26,14 +26,14 @@ class Complex
 //具体实现
 template<typename T> Complex<T>::Complex(T real,T image)
 {
-    // std::cout << "Complex()构造函数" << std::endl;
+    std::cout << "Complex()构造函数" << std::endl;
     this->real = real;
     this->image = image;
 }
 
 template<typename T> Complex<T>::~Complex()
 {
-    //  std::cout << "~Complex()析构函数" << std::endl;
+    std::cout << "~Complex()析构函数" << std::endl;
 }
 
 template<typename T> Complex<T> operator+(const Complex<T> &c1,const Complex<T> &c2)

@@ -3,7 +3,7 @@
 #include<iostream>
 #include<string>
 
-//模板类
+//模板类 - Person
 template <typename T>
 class Person
 {

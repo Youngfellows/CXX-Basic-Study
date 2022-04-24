@@ -27,7 +27,7 @@ int main()
     }
     std::cout << std::endl;
 
-    double element = getElement(doubleArray,3);
+    double element = getElement(doubleArray,3);//调用函数模板
     std::cout << "element = " << element << std::endl;
 
     return 0;

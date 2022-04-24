@@ -4,7 +4,7 @@
 
 int main()
 {
-    //创建类模板的实例话对象
+    //创建类模板的实例化对象,指针变量p1指向对象实例化对象
     Person<double> *p1 = new Person<double>("aispeex",22,87.45);
     p1->show();
     delete p1;
@@ -17,7 +17,7 @@ int main()
     p3->show();
     delete p3;
 
-    //创建继承的类模板的实例化对象
+    //创建继承的类模板的实例化对象,指针变量stu1指向对象实例化对象
     Student<int> *stu1 = new Student<int>("王小名",23,77,89.9);
     stu1->show();
     delete stu1;
