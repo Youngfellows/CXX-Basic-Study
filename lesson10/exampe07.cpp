@@ -17,6 +17,7 @@ class SafeArray
 
 SafeArray::SafeArray()
 {
+    std::cout << "SaveArray()无参数构造函数" << std::endl;
     for(int i = 0; i < SIZE; i++)
     {
         array[i] = i;
@@ -25,9 +26,10 @@ SafeArray::SafeArray()
 
 SafeArray::~SafeArray()
 {
-
+    std::cout << "~SaveArray()析构函数" << std::endl;
 }
 
+ //下标运算符 [] 重载
 int & SafeArray::operator[](int position)
 {
     if(position > SIZE || position < 0)

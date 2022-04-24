@@ -25,7 +25,7 @@ class Student
 //带参数构造函数完成数据成员初始化
 Student::Student(int y,int m,int d,int num = 0,std::string sname = "no name"):code(num)
 {
-    //std::cout << "Student()构造函数" << std::endl;
+    std::cout << "Student()构造函数" << std::endl;
     name = sname;
     birthday.year = y;
     birthday.month = m;
@@ -34,7 +34,7 @@ Student::Student(int y,int m,int d,int num = 0,std::string sname = "no name"):co
 
 Student::~Student()
 {
-    //std::cout << "~Student()析构函数" << std::endl;
+    std::cout << "~Student()析构函数" << std::endl;
 }
 
 //常成员函数

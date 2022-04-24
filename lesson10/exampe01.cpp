@@ -20,6 +20,7 @@ class Box
 
 Box::Box()
 {
+    std::cout << "Box()构造函数" << std::endl;
     this->length = 0;
     this->breadth = 0;
     this->height = 0;
@@ -27,7 +28,7 @@ Box::Box()
 
 Box::Box(double l,double b,double h)
 {
-    // std::cout << "Box()构造函数" << std::endl;
+    std::cout << "Box()构造函数,带参数" << std::endl;
     this->length = l;
     this->breadth = b;
     this->height = h;

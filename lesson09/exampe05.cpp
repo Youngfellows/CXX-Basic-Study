@@ -69,7 +69,8 @@ int main()
     std::cin.get();
     std::cin >> day;
 
-    TDate *date = new (TDate);//创建对象
+    //TDate *date = new (TDate);//创建对象
+    TDate *date = new TDate();//创建对象
     date->setDate(year,month,day);
     std::cout << "是否润年: " << date->isLeapYear() << std::endl;
     date->printDate();

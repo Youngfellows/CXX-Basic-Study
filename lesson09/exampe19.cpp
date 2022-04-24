@@ -43,14 +43,14 @@ double Distance::getDistance()
 
 Point::Point(double px,double py)
 {
-    // std::cout << "Point()构造函数" << std::endl;
+    std::cout << "Point()构造函数" << std::endl;
     this->x = px;
     this->y = py;
 }
 
 Point::~Point()
 {
-    // std::cout << "~Point()析构函数" << std::endl;
+    std::cout << "~Point()析构函数" << std::endl;
 }
 
 double Point::getX()

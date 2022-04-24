@@ -43,8 +43,9 @@ Distance::~Distance()
  //重载-
 Distance Distance::operator - ()
 {
-    this->feet = this->feet;
-    this->inches = this->inches;
+    this->feet = -this->feet;
+    this->inches = -this->inches;
+    return Distance(this->feet,this->inches);
 }
 
  //重载<
@@ -71,6 +72,7 @@ std::ostream & operator << (std::ostream &output, const Distance &d)
  //输入运算符重载
 std::istream & operator >> (std::istream &input,Distance &d)
 {
+    std::cout << "feet inches" << std::endl;
     input >> d.feet >> d.inches ;
     return input;
 }

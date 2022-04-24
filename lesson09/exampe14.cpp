@@ -32,7 +32,7 @@ void Counter::showNumber()
     std::cout << "number = " << number << std::endl;
 }
 
-//定义静态数据成员
+//定义静态数据成员,是类共享的
 int Counter::number = 0;
 
 int main()

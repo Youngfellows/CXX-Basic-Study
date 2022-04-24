@@ -24,14 +24,14 @@ Person::~Person()
 void Person::testFun()
 {
     age++;
-    // PHONE_NUMBER++;
+    //PHONE_NUMBER++;
 }
 
 int main()
 {
     Person p1,p2;
     p1.age = 18;
-    // p1.PHONE_NUMBER = 13699828991;
+    //p1.PHONE_NUMBER = 13699828991;
     p2.age = 24;
 
     std::cout << "&p1.age = " << &p1.age << " ,&p1.PHONE_NUMBER = " << &p1.PHONE_NUMBER << std::endl;

@@ -11,9 +11,9 @@ class Shape
         Shape();
         Shape(double w,double h);
         ~Shape();
-        // double getArea();//面积
-       virtual double getArea();//面积(虚函数,子类调用指向自己的同名函数)
-    //    virtual double getArea() = 0;//纯虚函数
+        //double getArea();//面积
+        virtual double getArea();//面积(虚函数,子类调用指向自己的同名函数)
+        //virtual double getArea() = 0;//纯虚函数
 };
 
 //矩形
@@ -34,6 +34,7 @@ class Triangle: public Shape
 
 Shape::Shape()
 {
+    std::cout << "Shape()无参构造函数" << std::endl;
     this->width = 0;
     this->heigth = 0;
 }
@@ -45,7 +46,7 @@ Shape::~Shape()
 
 Shape::Shape(double w,double h)
 {
-    std::cout << "Shape()构造函数" << std::endl;
+    std::cout << "Shape()有参构造函数" << std::endl;
     this->width = w;
     this->heigth = h;
 }
@@ -59,7 +60,7 @@ double Shape::getArea()
 //调用父类的构造函数
 Rectangle::Rectangle(double w,double h):Shape(w,h)
 {
-    std::cout << "Rectangle构造函数" << std::endl;
+    std::cout << "Rectangle()构造函数" << std::endl;
 }
 
 double Rectangle::getArea()
@@ -70,7 +71,7 @@ double Rectangle::getArea()
 
 Triangle::Triangle(double w,double h):Shape(w,h)
 {
-    std::cout << "Triangle构造函数" << std::endl;
+    std::cout << "Triangle()构造函数" << std::endl;
 }
 
 double Triangle::getArea()

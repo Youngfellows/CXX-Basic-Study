@@ -15,7 +15,7 @@ class D
         }
 };
 
-//类A继承类D
+//类A继承类D //虚继承
 class A: virtual public D
 {
     public: 
@@ -30,7 +30,7 @@ class A: virtual public D
         }
 };
 
-//类A继承类D  //虚继承
+//类B继承类D  //虚继承
 class B: virtual public D
 {
     public: 

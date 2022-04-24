@@ -15,8 +15,8 @@ int main()
 		// (*结构指针 ) . 成员
 
     //用指针访问结构变量的成员
-    Person person;//定义结构体变量person
-    Person *p;//定义结构体指针变量p
+    struct Person person;//定义结构体变量person
+    struct Person *p;//定义结构体指针变量p
 
     p = &person;//p指向person变量
 
@@ -38,7 +38,7 @@ int main()
     std::cout << std::endl;
     
     //类型相同的结构变量可以整体赋值
-    Person employee,*pe;
+    struct Person employee,*pe;
     pe = &employee;//pe指向employee
     employee = person;
 

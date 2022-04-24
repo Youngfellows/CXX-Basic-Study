@@ -20,14 +20,14 @@ class Point
 
 Point::Point(double px,double py)
 {
-    //std::cout << "Point()构造函数" << std::endl;
+    std::cout << "Point()构造函数" << std::endl;
     this->x = px;
     this->y = py;
 }
 
 Point::~Point()
 {
-    //std::cout << "~Point()析构函数" << std::endl;
+    std::cout << "~Point()析构函数" << std::endl;
 }
 
 double Point::getX()
@@ -80,7 +80,7 @@ int main()
     //友元函数
     Point p1(3.4,7.8);//点p1
     Point p2(8.4,15.8);//点p2
-      // std::cout << "p1.getX() = " << p1.getX() << std::endl;
+    //std::cout << "p1.getX() = " << p1.getX() << std::endl;
 
     Point *p3 = new Point(3.4,7.8);//点p3
     Point *p4 = new Point(8.4,15.8);//点p4

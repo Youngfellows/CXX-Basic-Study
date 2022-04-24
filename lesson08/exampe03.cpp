@@ -21,7 +21,7 @@ int main()
     std::cout << "1.风力: " << day.wind << std::endl << std::endl;
 
     //test1(day);//传值
-    // test2(day);//传引用
+    //test2(day);//传引用
     test3(&day);//传地址
 
     std::cout << "3.温度: " << day.temp << std::endl;

@@ -22,19 +22,21 @@ class Timer
 
 Timer::Timer()
 {
+    std::cout << "Timer()无参构造函数" << std::endl;
     this->hours = 0;
     this->minutes = 0;
 }
 
 Timer::Timer(int h,int m)
 {
+    std::cout << "Timer()有参构造函数" << std::endl;
     this->hours = h;
     this->minutes = m;
 }
 
 Timer::~Timer()
 {
-    // std::cout << "析构函数" << std::endl;
+    std::cout << "~Timer()析构函数" << std::endl;
 }
 
  // 重载前缀递增运算符（ ++ ）
@@ -47,7 +49,7 @@ Timer Timer::operator++()
         this->minutes -= 60;
     }
 
-    return Timer(this->hours,this->minutes);
+    return Timer(this->hours,this->minutes);//返回加之后的值
 }
 
  // 重载后缀递增运算符（ ++ ）

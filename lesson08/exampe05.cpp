@@ -11,7 +11,7 @@ struct Person
 int main()
 {
     const int SIZE = 2;
-    Person persons[SIZE];  //结构体数组
+    struct Person persons[SIZE];  //结构体数组
 
     for(int i = 0; i < SIZE; i++)
     {
@@ -44,7 +44,7 @@ int main()
     }
 
     //使用冒泡排序发排序输出
-    Person ptemp;//临时变量
+    struct Person ptemp;//临时变量
     for(int i = 0; i < SIZE; i++)
     {
       for(int j = 0; j < SIZE - i; j++)

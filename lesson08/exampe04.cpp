@@ -13,7 +13,7 @@ struct Student{      //声明一个结构体类型Student
        char name[20];   //声明一个字符型数组name
        char sex[5];        //声明一个字符型变量sex
        int age;         //声明一个整形变量age
-       Date birthday;   //Date是结构体类型，birthday是Date的类型的变量
+       struct Date birthday;   //Date是结构体类型，birthday是Date的类型的变量
        float score;     //声明一个单精度型变量
        char addr[30];   //声明一个字符型数组addr
 };
@@ -21,7 +21,7 @@ struct Student{      //声明一个结构体类型Student
 
 int main()
 {
-       Student one;
+       struct Student one;//声明一个结构体变量one
 
        //输入信息
        cout<<"请输入学号:";

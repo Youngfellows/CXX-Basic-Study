@@ -16,21 +16,21 @@ class Distance
 
 Distance::Distance()
 {
-    std::cout << "无参构造函数" << std::endl;
+    std::cout << "Distance()无参构造函数" << std::endl;
     this->feet = 0;
     this->inches = 0;
 }
 
 Distance::Distance(double f,double i)
 {
-    std::cout << "有参构造函数" << std::endl;
+    std::cout << "Distance()有参构造函数" << std::endl;
     this->feet = f;
     this->inches = i;
 }
 
 Distance::~Distance()
 {
-    std::cout << "析构函数" << std::endl; 
+    std::cout << "~Distance()析构函数" << std::endl; 
 }
 
 void Distance::display()

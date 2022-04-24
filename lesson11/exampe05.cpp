@@ -27,6 +27,7 @@ class Rectangle : public Shape
 
 };
 
+//三角形
 class Triangle : public Shape
 {
     public: 
@@ -37,12 +38,14 @@ class Triangle : public Shape
 
 Shape::Shape()
 {
+    std::cout << "Shape()无参构造函数" << std::endl;
     this->width = 0;
     this->height = 0;
 }
 
 Shape::Shape(double w,double h)
 {
+    std::cout << "Shape()有参构造函数" << std::endl;
     this->width = w;
     this->height = h;
 }
@@ -70,7 +73,7 @@ Rectangle::Rectangle(double w,double h):Shape(w,h)
 //实现抽象方法
 double Rectangle::getArea()
 {
-
+    std::cout << "Rectangle类的getArea()" << std::endl;
     return this->width * this->height;
 }
 
