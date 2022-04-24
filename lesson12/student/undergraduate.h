@@ -3,6 +3,7 @@
 
 #include "student.h"
 
+//子类-本科生
 class Undergraduate:public student//本科生类作为子类，继承了学生类
 {
    public:

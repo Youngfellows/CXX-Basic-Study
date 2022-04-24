@@ -4,7 +4,7 @@
 #include<iostream>
 #include<string>
 
-//基类(接口)
+//基类(接口) - 雇员
 class Employee
 {
     protected: 

@@ -4,24 +4,27 @@
 class Base
 {
     public: 
-        virtual void f1()
+        //虚函数,抽象函数
+        virtual void f1() 
         {
-            std::cout << "base 类 f1()" << std::endl;            
+            std::cout << "Base 类 f1()" << std::endl;            
         }
 
+        //虚函数
         virtual void f2()
         {
-            std::cout << "base 类 f2()" << std::endl;
+            std::cout << "Base 类 f2()" << std::endl;
         }
 
+        //虚函数
         virtual void f3()
         {
-            std::cout << "base 类 f3()" << std::endl;
+            std::cout << "Base 类 f3()" << std::endl;
         }
 
         void f()
         {
-            std::cout << "base 类 f()" << std::endl;
+            std::cout << "Base 类 f()" << std::endl;
         }
 };
 
@@ -32,7 +35,7 @@ class Derived : public Base
     public: 
         Derived()
         {
-
+            std::cout << "Derived()无参构造函数" << std::endl;      
         }
 
         void f1()
@@ -40,6 +43,7 @@ class Derived : public Base
             std::cout << "Derived 类 f1()" << std::endl;            
         }
 
+        //Derived 类自己的f2函数
         void f2(int a)
         {
             std::cout << "Derived 类 f2()" << std::endl;
@@ -67,6 +71,9 @@ int main()
     base->f1();
     base->f2();
     base->f3();
+
+    //delete d;
+    delete base;
 
     return 0;
 }

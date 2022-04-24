@@ -37,11 +37,11 @@ void student::set(const char *n,int a,int h,int w)
 
 student::student(char *n,int a,int h,int w)
 {
-   cout <<"Constructing a student with parameter..." <<endl;
+   cout <<"student()有参构造函数" <<endl;
    set(n,a,h,w);
 }
 
 student::student()
 {
-   cout <<"Constructing a student without parameter..." <<endl;
+    cout <<"student()无参构造函数" <<endl;
 }

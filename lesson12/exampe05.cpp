@@ -32,8 +32,11 @@ class Triangle : public Figure
 //圆形
 class Circle : public Figure
 {
+    protected:
+        double r;//半径
+
     public: 
-        Circle(double px,double py);
+        Circle(double px,double py,double r);
         double area();//求面积(具体实现)
 };
 
@@ -41,20 +44,20 @@ class Circle : public Figure
 //方法定义--基类
 Figure::Figure(double px,double py)
 {
-    std::cout << "Figure()构造函数" << std::endl;
+    std::cout << "Figure()有参构造函数" << std::endl;
     this->x = px;
     this->y = py;
 }
 
 Figure::~Figure()
 {
-    std::cout << "~Figure()" << std::endl;
+    std::cout << "~Figure()析构函数" << std::endl;
 }
 
 //定义方法--矩形
 Square::Square(double px,double py):Figure(px,py)
 {
-    std::cout << "Square()构造函数" << std::endl;
+    std::cout << "Square()有参构造函数" << std::endl;
 }
 
 double Square::area()
@@ -65,7 +68,7 @@ double Square::area()
 //定义方法--三角形
 Triangle::Triangle(double px,double py) : Figure(px,py)
 {
-    std::cout << "Triangle()构造函数" << std::endl;
+    std::cout << "Triangle()有参构造函数" << std::endl;
 }
 
 double Triangle::area()
@@ -74,15 +77,16 @@ double Triangle::area()
 }
 
 //定义方法--圆形、
-Circle::Circle(double px,double py):Figure(px,py)
+Circle::Circle(double px,double py,double r):Figure(px,py)
 {
-    std::cout << "Circle()构造函数" << std::endl;
+    std::cout << "Circle()有参构造函数" << std::endl;
+    this->r = r;
 }
 
-const double PI = 3.1415926;//圆周率
+const double PI = 3.1415926;//圆周率 - 常量
 double Circle::area()
 {
-        return PI * this->x * this->x;
+        return PI * this->r * this->r;
 }
 
 
@@ -97,7 +101,7 @@ int main()
 
     Triangle *triangle = new Triangle(10,5);//三角形
     Square *squre = new Square(10,5);//矩形
-    Circle *circle = new Circle(10,5);//圆形
+    Circle *circle = new Circle(10,5,1);//圆形
 
     double area;//面积
     // figure = &triangle;//基类指针指向三角形

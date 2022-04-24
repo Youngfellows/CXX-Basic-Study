@@ -13,7 +13,7 @@
 
 int main()
 {
-    //创建对象
+    //创建对象,指针变量circle指向对象new Circle(),通过指针为对象赋值和调用对象方法
     Circle *circle = new Circle();
     circle->setRadius(8.9);//设置半径
     double area = circle->getArea();//获取面积

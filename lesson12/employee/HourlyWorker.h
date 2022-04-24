@@ -3,7 +3,7 @@
 
 #include "Employee.h"
 
-//计时工
+//计时工类HourlyWorker继承自父类Employee雇员类
 class HourlyWorker : public Employee
 {
     private: 

@@ -32,19 +32,21 @@ class Student : public Person
 
 Person::Person()
 {
+    std::cout << "Person()无参构造函数" << std::endl;
     this->name = "no name";
     this->age = 0;
 }
 
 Person::Person(std::string n,int a)
 {
+    std::cout << "Person()有参构造函数" << std::endl;
     this->name = n;
     this->age = a;
 }
 
 Person::~Person()
 {
-    // std::cout << "~Person() 调用了" << std::endl;
+    std::cout << "~Person() 析构函数调用了" << std::endl;
 }
 
 void Person::setName(std::string n)
@@ -61,17 +63,18 @@ void Person::setAge(int a)
 
 Student::Student():Person(),stuId(0000)
 {
-    
+    std::cout << "Student()无参构造函数" << std::endl; 
 }
 
 Student::Student(std::string n,int a,long id):Person(n,a)
 {
+    std::cout << "Student()有参构造函数" << std::endl; 
     this->stuId = id;
 }
 
 Student::~Student()
 {
-    // std::cout << "~Student() 调用了" << std::endl; 
+    std::cout << "~Student()析构函数调用了" << std::endl; 
 }
 
 void Student::setStuId(long id)

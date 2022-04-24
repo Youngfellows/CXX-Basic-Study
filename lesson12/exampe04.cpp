@@ -1,5 +1,6 @@
 #include<iostream>
 
+//基类
 class Base
 {
     public:
@@ -10,10 +11,11 @@ class Base
 
         virtual  ~Base()//虚析构函数
         {
-            std::cout << "~Base()析构函数" << std::endl;
+            std::cout << "~Base()虚析构函数" << std::endl;
         }
 };
 
+//子类
 class Derived : public Base
 {
     public: 
