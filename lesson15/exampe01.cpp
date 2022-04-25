@@ -27,7 +27,7 @@ int main()
     //创建5条线程
     pthread_t threads[NUM_THREADS];
     int threadCount;
-    int i;
+    long i;
     for(i = 0; i < NUM_THREADS;i++)
     {
         std::cout << "main() : creating thread, " << i << std::endl;

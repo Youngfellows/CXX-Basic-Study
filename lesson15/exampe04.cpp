@@ -9,7 +9,7 @@
 int sum = 0;//定义全局变量，让所有线程同时写，这样就需要锁机制
 pthread_mutex_t sum_mute;//互斥锁 
 
-
+//线程执行的回调函数
 void * say_hello(void * args)
 {
     std::cout << "hello 在线程 " << *((int*)args) << std::endl;
@@ -43,7 +43,7 @@ int main()
 
         if(ret != 0)
         {
-            std::cout << "创建现场失败: 错误码" << ret << std::endl;
+            std::cout << "创建线程失败: 错误码" << ret << std::endl;
         }else
         {
             std::cout << "创建线程成功" << i << std::endl;

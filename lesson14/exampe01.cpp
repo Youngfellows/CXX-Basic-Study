@@ -45,15 +45,15 @@ int main()
     std::string str[] = {"aispeex","apple","google","banana"};
     std::vector<std::string> vc2(str,str+4);
     
-    std::cout << "str数组大小: " << vc2.size() << std::endl;
+    std::cout << "vc2数组大小: " << vc2.size() << std::endl;
     showVector(vc2);
 
     vc2.erase(vc2.end());//删除最后一个元素
-    std::cout << "str数组大小: " << vc2.size() << std::endl;
+    std::cout << "vc2数组大小: " << vc2.size() << std::endl;
     showVector(vc2);
 
     vc2.clear();//清空数组
-    std::cout << "str数组大小: " << vc2.size() << std::endl;
+    std::cout << "vc2数组大小: " << vc2.size() << std::endl;
 
     return 0;
 }

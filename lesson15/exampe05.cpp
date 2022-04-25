@@ -14,7 +14,7 @@ pthread_cond_t tasks_cond;
 void * say_hello2(void * args)
 {
     pthread_t pid = pthread_self();//获取当前线程id  
-    std::cout << "[" << pid << "] hello in 线程 2 线程号 " << (int)args << std::endl;
+    std::cout << "\n[" << pid << "] hello in 线程 2 线程号 " << *((int *)args) << std::endl;
 
     bool is_signaled = false;//信号
     while(1)
@@ -22,11 +22,11 @@ void * say_hello2(void * args)
         pthread_mutex_lock(&tasks_mutex);//加锁
         if(tasks > BOUNDARY)
         {
-            std::cout << "[" << pid << "] 线程 task = " << tasks << " 在线程" << (int)args << std::endl;
+            std::cout << "[" << pid << "] 线程 task = " << tasks << " 在线程" << *((int *)args) << std::endl;
             --tasks;//tasks自减
         }else if(!is_signaled)//信号处理
         {
-            std::cout << "[" << pid << "] 线程2交给信号控制线程1执行" << (int)args << std::endl;
+            std::cout << "[" << pid << "] 线程2交给信号控制线程1执行" << *((int *)args) << std::endl;
             pthread_cond_signal(&tasks_cond);//signal:向hello1发送信号，表明tasks已经>5  
             is_signaled = true;//表明信号已发送，退出此线程
         }
@@ -36,25 +36,25 @@ void * say_hello2(void * args)
         {
             break;//结束线程
         }
-
-    } 
+    }
+    pthread_exit(NULL);//结束这个线程
 }
 
 void * say_hello1(void * args)
 {
     pthread_t pid = pthread_self();//获取当前线程id  
-    std::cout << "[" << pid << "] hello 在线程 1 线程号 " << (int)args << std::endl;
+    std::cout << "\n[" << pid << "] hello 在线程 1 线程号 " << *((int *)args) << std::endl;
     while(1)
     {
         pthread_mutex_lock(&tasks_mutex);//加锁
         if(tasks > BOUNDARY)
         {
-            std::cout << "[" << pid << "]信号控制在线程" << (int)args << std::endl;
+            std::cout << "[" << pid << "]信号控制在线程" << *((int *)args) << std::endl;
             //wait:等待信号量生效，接收到信号，向hello2发出信号，跳出wait,执行后续
             pthread_cond_wait(&tasks_cond,&tasks_mutex);
         }else
         {
-            std::cout << "[" << pid << "] 线程 task = " << tasks << " 在线程" << (int)args << std::endl;
+            std::cout << "[" << pid << "] 线程 task = " << tasks << " 在线程" << *((int *)args) << std::endl;
             --tasks;//自减
         }
 
@@ -64,8 +64,7 @@ void * say_hello1(void * args)
             break;
         }
     }
-
-
+    pthread_exit(NULL);//结束这个线程
 }
 
 int main()

@@ -6,7 +6,7 @@
 
 #define NUM_THREAD 5
 
-
+//线程执行的回调函数
 void *wait(void *t)
 {
     int i;
@@ -19,7 +19,7 @@ void *wait(void *t)
 
     long status =*((long *)t)+10;
     // pthread_exit(NULL);
-    pthread_exit((void *)status);
+    pthread_exit((void *)&status);
 }
 
 int main()
@@ -51,7 +51,7 @@ int main()
     for(i = 0; i < NUM_THREAD; i++)
     {
         //主程序join每个线程后取得每个线程的退出信息status 
-        rc =   pthread_join(threads[i],&status); //pthread_join用来等待一个线程的结束，是一个线程阻塞的函数  
+        rc = pthread_join(threads[i],&status); //pthread_join用来等待一个线程的结束，是一个线程阻塞的函数  
         if(rc)
         {
             std::cout << "pthread_join error:error_code = " << rc << std::endl; 
