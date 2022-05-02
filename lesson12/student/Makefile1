@@ -1,0 +1,11 @@
+TARGET = app
+objects = main.o student.o undergraduate.o
+CXX = g++
+$(TARGET):$(objects)
+	$(CXX) -o $@ $^
+#$(objects):%.o:%.cpp
+main.o:main.cpp
+student.o:student.cpp
+undergraduate.o:undergraduate.cpp
+clean:
+	rm app *.o
