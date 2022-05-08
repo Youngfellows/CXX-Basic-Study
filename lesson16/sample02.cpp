@@ -79,5 +79,9 @@ int main(int arg,char *args[])
     pDate->setDate(2021,6,16);//通过指针修改变量属性
     pDate->showDate();
 
+    cout << "*************" << endl;
+    (*pDate).setDate(2028,8,8);
+    (*pDate).showDate();
+
     return 0;
 }
