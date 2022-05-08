@@ -1,0 +1,13 @@
+G+ = g++
+TARGET = sample01
+OBJS = sample01.o
+SOURS = sample01.cpp
+
+$(TARGET):$(OBJS)
+	$(G+) -o $@ $^
+
+$(OBJS):$(SOURS)	
+	$(G+) -c -o $@ $^
+
+clean:
+	rm $(TARGET) *.o *.out

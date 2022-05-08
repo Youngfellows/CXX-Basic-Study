@@ -1,0 +1,17 @@
+CXX = g++
+CFLAGS = -Wall
+LDFLAGS = 
+
+ALLCPPFILE = $(wildcard *.cpp)
+OBJS = $(patsubst %.cpp, %.out, $(wildcard *.cpp))
+
+.PHONY: all
+all: $(OBJS)
+	@echo $(ALLCPPFILE)
+	@echo $(OBJS)
+
+%.out: %.cpp
+	$(CXX) $(LDFLAGS) -o $@ $^
+
+clean:
+	rm -f *.out *.o

@@ -1,0 +1,20 @@
+
+CXX = g++
+CFLAGS = -Wall
+LDFLAGS = 
+
+target = sample02
+srcs = sample02.cpp
+objs = $(srcs:.cpp=.o)
+
+.PHONY: all
+all: $(target)
+
+$(target): $(objs)
+	$(CXX) $(LDFLAGS) -o $@ $^
+
+$(objs):%.o:%.cpp
+	$(CXX) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm -f $(target) *.o
