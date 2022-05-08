@@ -64,9 +64,9 @@ double Ratio::rate()
 }
 
 //返回Ratio对象的实例
-Ratio copyRatio(Ratio r)//2.对象按值传递给函数时,调用拷贝构造函数
+Ratio & copyRatio(Ratio &r)//2.对象按值传递给函数时,调用拷贝构造函数
 {
-    Ratio s = r;//3.声明对象s时,把r复制给s,调用拷贝构造函数
+    Ratio & s = r;//3.声明对象s时,把r复制给s,调用拷贝构造函数
     return s;//4.函数返回时调用拷贝构造函数,把s复制给无名对象
 }
 
@@ -87,9 +87,9 @@ int main(int arg,char *args[])
     //抛出异常 
     //error: cannot bind non-const lvalue reference of type ‘Ratio&’ to an rvalue of type ‘Ratio’
     //跟踪拷贝构造函数的调用
-    //Ratio ratio3 = copyRatio(ratio1);
-    //double rate3 = ratio3.rate();
-    //cout << "ratio3长宽比例:" << rate3 << endl;
+    Ratio ratio3 = copyRatio(ratio1);
+    double rate3 = ratio3.rate();
+    cout << "ratio3长宽比例:" << rate3 << endl;
 
     return 0;
 }
