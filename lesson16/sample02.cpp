@@ -83,5 +83,8 @@ int main(int arg,char *args[])
     (*pDate).setDate(2028,8,8);
     (*pDate).showDate();
 
+    cout << "*******对象所占空间,是该对象数据部分的空间,与成员函数无关**********" << endl;
+    cout << "CDate类的大小是:" << sizeof(CDate) << endl;
+
     return 0;
 }
