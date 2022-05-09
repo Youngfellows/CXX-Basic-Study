@@ -1,6 +1,4 @@
 #include "../include/School.h"
-#include "../include/Student.h"
-#include "../include/Teacher.h"
 
 //在类外定义函数 - 构造函数
 School::School(char const *name)
