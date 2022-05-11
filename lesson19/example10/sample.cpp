@@ -9,6 +9,13 @@ int main(int arg,char *args[])
     display(date,time);
 
     //创建对象,动态申请内存
+    Date *d1 = new Date(2028,8,8);
+    Time *t1 = new Time(18,44,33);
+    display(*d1,*t1);
+
+    //释放内存
+    delete d1;
+    delete t1;
 
     return 0;
 }
