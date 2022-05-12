@@ -33,6 +33,7 @@ $(TARGET):$(OBJS)
 	@echo "_DEPS_SHARE=" $(_DEPS_SHARE)
 	@echo "OBJS=" $(OBJS)
 	$(CPP) $(CPPFLAGS) -o $(ODIR)/$@ $^	
+	rm -rf ${OBJS}
 
 clean:
 	@echo "这行将不会被打印"
