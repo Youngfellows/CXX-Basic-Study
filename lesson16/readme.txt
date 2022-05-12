@@ -16,6 +16,6 @@
     返回值为空格分隔并且存在当前目录下的所有符合模式 PATTERN 的文件名。
 
     实例：
-    ALLFILE=$(wildcard %.cpp)
+    ALLFILE=$(wildcard *.cpp)
     all:
         @echo $(ALLFILE)
