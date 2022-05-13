@@ -39,7 +39,7 @@ void Complex::display()
 }
 
 //在类外定义函数 - 定义可以double()类型转换的成员函数
-double operator Complex::double()
+Complex:: operator double()
 {
     return this->real;
 }
