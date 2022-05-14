@@ -1,10 +1,7 @@
 #ifndef MATRIX2_H
 #define MATRIX2_H
 
-#include<iostream>
 #include "./Global.h"
-
-using namespace std;
 
 //定义Matrix类,矩阵
 class Matrix2

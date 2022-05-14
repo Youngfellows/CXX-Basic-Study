@@ -1,11 +1,12 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//定义全局引用及常量
 #include<iostream>
+
 using namespace std;
 
-//定义全局变量
-const int M = 2;//行数
-const int N = 3;//列数
+//常量 - 数组大小
+const int SIZE = 5;
 
 #endif
