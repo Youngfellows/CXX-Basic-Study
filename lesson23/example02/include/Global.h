@@ -14,6 +14,6 @@ const int LEN = 20;
 const int COURSE_COUNT = 3;
 
 //常量 - 学生数量
-const int STUDENT_COUNT = 2;
+const int STUDENT_COUNT = 5;
 
 #endif

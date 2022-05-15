@@ -8,7 +8,7 @@ void test()
     ManageSystem *system = new ManageSystem();
     //使用指针调用类方法
     system->input(STUDENT_COUNT,COURSE_COUNT);
-    system->display();
+    //system->display();
 
     //释放内存
     delete system;
