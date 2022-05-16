@@ -17,7 +17,8 @@ class MyString
         void set(char s[LEN]);//设置字符串
         int length();//获取字符串长度
         char * copy(char *dest,int start);//从第几个字符开始拷贝字符串
-        char * copy2(char *dest,int start);//从第几个字符开始拷贝字符串
+        void calc(CALCULATE_1 calc,char *str,int &upper,int &lower,int &digit,int &space,int &other);//通过函数指针来回调
+        void calc2(CALCULATE_2 calc,char *str,int *upper,int *lower,int *digit,int *space,int *other);//通过函数指针来回调
 };
 
 #endif

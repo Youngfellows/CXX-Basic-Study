@@ -86,41 +86,15 @@ char * MyString::copy(char *p2,int start)
     return p2;
 }
 
-//在类外实现函数 - copy2()函数
-char * MyString::copy2(char *p2,int start)
+//在类外实现函数 - calc()函数 - 通过函数指针来回调
+void MyString::calc(CALCULATE_1 calc,char *str,int &upper,int &lower,int &digit,int &space,int &other)
 {
-    //动态申请内存
-    if (start > this->length())
-    {
-        char buf[100];//缓冲区
-        char err[100] = "拷贝的位置%d已经超过字符串长度%d了";
-        sprintf(buf,err,start,this->length());
-        cout << buf << endl;
-        throw buf;
-    }
-    cout << "copy2():: start:" << start << endl;
+    (*calc)(str,upper,lower,digit,space,other);
+}
 
-    char *p = this->str;//char *p型指针变量p,p指向字符串(字符数组str)
-    //cout << "1,p=" << p << endl;
-    int i = 0;//索引
-    while (i < start - 1)
-    {
-        i++;
-        p++;//移动指针
-        //cout << "i=" << i << ",p=" << p << endl;
-    }
-    cout << "copy2():: p=" << p << endl;
-
-    //从start开始拷贝
-    int j = 0;
-    while(*p != '\0')
-    {
-        *p2 = *p;
-        j++;
-        p2++;
-    }
-    *p2 = '\0';
-    cout << "copy2():: p2=" << p2 << endl;
-    return p2;
+//在类外实现函数 - calc2()函数 - 通过函数指针来回调
+void MyString::calc2(CALCULATE_2 calc,char *str,int *upper,int *lower,int *digit,int *space,int *other)
+{
+    (*calc)(str,upper,lower,digit,space,other);
 }
 
