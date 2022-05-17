@@ -37,6 +37,26 @@ void StringArray::input2()
     display2(this->str);
 }
 
+//在类外实现函数 - input3()函数
+void StringArray::input3()
+{
+    cout << "input2()::" << endl;
+    cout << "请输入" << SIZE << "个字符串" << endl;
+    for(int i = 0; i < SIZE; i++)
+    {
+        cin >> this->str[i];//输入字符串
+    }
+    //声明一个指针数组p
+    char *p[SIZE];
+    //为指针数组赋值
+    for(int i = 0; i < SIZE; i++)
+    {
+        p[i] = this->str[i];
+    }
+    sort5(p);
+    display6(p);
+}
+
 //在类外实现函数 - display1()函数
 void StringArray::display1()
 {
@@ -85,13 +105,23 @@ void StringArray::display4(char **s)
 //在类外实现函数 - display5()函数
 void StringArray::display5(char (*p)[LEN])//显示字符串数组
 {
-    cout << "display4()::" << endl;
+    cout << "display5()::" << endl;
     cout << "p:" << p << endl;
     for(int i = 0; i < SIZE; i++)
     {
         cout << *(p + i) << endl;
     }
     cout << endl;
+}
+
+//显示字符串数组,参数是指针数组s,数组含有SIZE个元素,每个元素是char *
+void StringArray::display6(char *s[SIZE])
+{
+    cout << "display6::" << endl;
+    for(int i = 0; i < SIZE; i++)
+    {
+        cout << *(s + i) << endl;
+    }
 }
 
 //在类外实现函数 - sort1()函数
@@ -161,6 +191,29 @@ void StringArray::sort3(char **s)
                 strcpy(pt,s[j]);
                 strcpy(s[j],s[j + 1]);
                 strcpy(s[j + 1],pt);
+                //display4(s);
+            }
+        }
+    }
+}
+
+//排序字符串数组,参数是指针数组s,数组含有SIZE个元素,每个元素是char *
+void StringArray::sort5(char *s[SIZE])
+{
+    cout << "sort5()::" << endl;
+    char buf[LEN];//缓冲区
+    char *pt = buf;//char *类型指针变量pt指向字符串buf
+    for(int i = 0; i < SIZE; i++)
+    {
+        for(int j = i; j < SIZE - 1; j++)
+        {
+            //cout << "i=" << i << "," << "j=" << j << ",j+1=" << j+1 << endl;
+            if(strcmp(*(s + j),*(s + j + 1)) > 0)
+            {
+                //cout << "i=" << i << "," << "j=" << j << ",大于j+1=" << j+1 << endl; 
+                strcpy(pt,*(s + j));
+                strcpy(*(s + j),*(s + j + 1));
+                strcpy(*(s + j + 1),pt);
                 //display4(s);
             }
         }

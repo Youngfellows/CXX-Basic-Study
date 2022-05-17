@@ -15,15 +15,18 @@ class StringArray
         ~StringArray();//析构函数
         void input1();//输入字符串数组
         void input2();//输入字符串数组
+        void input3();//输入字符串数组
         void display1();//显示字符串数组
         void display2(char s[SIZE][LEN]);//显示字符串数
         void display3(char **s);//显示字符串数组
         void display4(char **s);//显示字符串数组
-        void display5(char (*p)[LEN]);//显示字符串数组
+        void display5(char (*p)[LEN]);//显示字符串数组,参数是指向一维数组的指针变量
+        void display6(char *s[SIZE]);//显示字符串数组,参数是指针数组s,数组含有SIZE个元素,每个元素是char *
         void sort1();//排序字符串数组
         void sort2(char s[SIZE][LEN]);//排序字符串数组
         void sort3(char **s);//排序字符串数组
         void sort4(char (*p)[LEN]);//排序字符串数组
+        void sort5(char *s[SIZE]);//排序字符串数组,参数是指针数组s,数组含有SIZE个元素,每个元素是char *
 
         string *getStr2();//返回字符串数组地址
 

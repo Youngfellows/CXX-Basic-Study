@@ -65,3 +65,16 @@ void test4()
     //free(p);
     delete array;
 }
+
+//在文件外实现接口定义的函数 - test5()函数
+void test5()
+{
+    cout << "test4():: ~~~~" << endl;
+    //创建对象,动态申请内存
+    StringArray *array = new StringArray();
+    //通过指针访问对象
+    array->input3();//输入二维数组
+    
+    //释放内存
+    delete array;
+}
