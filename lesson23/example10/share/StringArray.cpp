@@ -67,6 +67,19 @@ void StringArray::display3(char **s)
     {
         cout << s[i] << endl;//打印字符串
     }
+    cout << endl;
+}
+
+//在类外实现函数 - display2()函数
+void StringArray::display4(char **s)
+{
+    cout << "display3()::" << endl;
+    for(int i = 0; i < SIZE; i++)
+    {
+        //cout << s+i << endl;
+        cout << *(s+i) << endl;
+    }
+    cout << endl;
 }
 
 //在类外实现函数 - sort1()函数
@@ -120,12 +133,42 @@ void StringArray::sort2(char s[SIZE][LEN])
 }
 
 //在类外实现函数 - sort3()函数
-void StringArray::sort3()
+void StringArray::sort3(char **s)
 {
     cout << "sort3()::" << endl;
+    char buf[LEN];//缓冲区
+    char *pt = buf;//char *类型指针变量pt指向字符串buf
+    for(int i = 0; i < SIZE; i++)
+    {
+        for(int j = i; j < SIZE - 1; j++)
+        {
+            //cout << "i=" << i << "," << "j=" << j << ",j+1=" << j+1 << endl;
+            if(strcmp(s[j],s[j + 1]) > 0)
+            {
+                //cout << "i=" << i << "," << "j=" << j << ",大于j+1=" << j+1 << endl; 
+                strcpy(pt,s[j]);
+                strcpy(s[j],s[j + 1]);
+                strcpy(s[j + 1],pt);
+                //display4(s);
+            }
+        }
+    }
 }
 
-//在类外实现函数 - getStr()函数
+//在类外实现函数 - getStr()函数 - 重点: 返回一个二维数组
+char ** StringArray::getStr()
+{
+    //动态申请内存
+    char **data;//定义一个返回二维数组的指针变量
+    data = (char **)malloc(SIZE * sizeof(char *));//申请两个保存char * 数据的二维数组
+    //为二维数组元素赋值
+    for(int i = 0; i < SIZE; i++)
+    {
+        data[i] = this->str[i];
+    }
+
+    return data;//返回二维数组
+}
 
 //在类外实现函数 - getStr2()函数
 string * StringArray::getStr2()//返回字符串数组地址

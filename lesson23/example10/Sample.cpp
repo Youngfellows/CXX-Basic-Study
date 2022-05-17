@@ -23,7 +23,7 @@ void test2()
     StringArray *array = new StringArray(); 
     //通过指针调用函数
     array->input2();
-    
+
     delete array;
 }
 
@@ -31,6 +31,21 @@ void test2()
 void test3()
 {
     cout << "test3():: ~~~~" << endl;
+    //创建对象,动态申请内存
+    StringArray *array = new StringArray();
+    //通过指针访问对象
+    array->input1();
+    char **ps = array->getStr();//获取输入的二维字符数组
+    array->display4(ps);
+    array->sort3(ps);
+    array->display4(ps);
+    cout << endl;
+
+    //释放内存
+    free(ps);
+
+    //释放内存
+    delete array;
 }
 
 //在文件外实现接口定义的函数 - test4()函数
