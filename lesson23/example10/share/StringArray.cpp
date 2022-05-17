@@ -73,11 +73,23 @@ void StringArray::display3(char **s)
 //在类外实现函数 - display2()函数
 void StringArray::display4(char **s)
 {
-    cout << "display3()::" << endl;
+    cout << "display4()::" << endl;
     for(int i = 0; i < SIZE; i++)
     {
         //cout << s+i << endl;
         cout << *(s+i) << endl;
+    }
+    cout << endl;
+}
+
+//在类外实现函数 - display5()函数
+void StringArray::display5(char (*p)[LEN])//显示字符串数组
+{
+    cout << "display4()::" << endl;
+    cout << "p:" << p << endl;
+    for(int i = 0; i < SIZE; i++)
+    {
+        cout << *(p + i) << endl;
     }
     cout << endl;
 }
@@ -155,6 +167,29 @@ void StringArray::sort3(char **s)
     }
 }
 
+//在类外实现函数 - sort3()函数
+void StringArray::sort4(char (*s)[LEN])
+{
+    cout << "sort4()::" << endl;
+    char buf[LEN];//缓冲区
+    char *pt = buf;//char *类型指针变量pt指向字符串buf
+    for(int i = 0; i < SIZE; i++)
+    {
+        for(int j = i; j < SIZE - 1; j++)
+        {
+            //cout << "i=" << i << "," << "j=" << j << ",j+1=" << j+1 << endl;
+            if(strcmp(*(s + j),s[j + 1]) > 0)
+            {
+                //cout << "i=" << i << "," << "j=" << j << ",大于j+1=" << j+1 << endl; 
+                strcpy(pt,s[j]);
+                strcpy(s[j],s[j + 1]);
+                strcpy(s[j + 1],pt);
+                //display4(s);
+            }
+        }
+    }
+}
+
 //在类外实现函数 - getStr()函数 - 重点: 返回一个二维数组
 char ** StringArray::getStr()
 {
@@ -168,6 +203,16 @@ char ** StringArray::getStr()
     }
 
     return data;//返回二维数组
+}
+
+//重点: 返回一个二维数组,通过返回一个指向一维数组(一维数组含有LEN个char元素)的指针变量来实现
+char (*StringArray::getStr3())[LEN]
+{
+    cout << "getStr3::" << endl;
+    //动态申请内存
+    char (*data)[LEN] = new char[SIZE][LEN];
+    data = this->str;//data指针变量指向二维数组str的0行元素
+    return data;
 }
 
 //在类外实现函数 - getStr2()函数

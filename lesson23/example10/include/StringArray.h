@@ -19,14 +19,19 @@ class StringArray
         void display2(char s[SIZE][LEN]);//显示字符串数
         void display3(char **s);//显示字符串数组
         void display4(char **s);//显示字符串数组
+        void display5(char (*p)[LEN]);//显示字符串数组
         void sort1();//排序字符串数组
         void sort2(char s[SIZE][LEN]);//排序字符串数组
         void sort3(char **s);//排序字符串数组
+        void sort4(char (*p)[LEN]);//排序字符串数组
 
         string *getStr2();//返回字符串数组地址
 
         //重点: 返回一个二维数组
         char **getStr();
+
+        //重点: 返回一个二维数组,通过返回一个指向一维数组(一维数组含有LEN个char元素)的指针变量来实现
+        char (*getStr3())[LEN];
 };
 
 #endif

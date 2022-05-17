@@ -52,4 +52,16 @@ void test3()
 void test4()
 {
     cout << "test4():: ~~~~" << endl;
+    //创建对象,动态申请内存
+    StringArray *array = new StringArray();
+    //通过指针访问对象
+    array->input1();//输入二维数组
+    char (*p)[LEN] = array->getStr3();//返回输入的二维数组
+    array->display5(p);//显示二维数组
+    array->sort4(p);//排序二维数组
+    array->display5(p);//显示二维数组
+    
+    //释放内存
+    //free(p);
+    delete array;
 }
