@@ -1,7 +1,7 @@
 #ifndef INTEGRAL_H
 #define INTEGRAL_H
 
-#include "./Integral.h"
+#include "./Global.h"
 
 //定义Integral类 - 使用矩形法求定积分
 class Integral
@@ -15,7 +15,9 @@ class Integral
         Integral();//构造函数
         Integral(int bottom,int top,int count);//构造函数
         ~Integral();//析构函数
-        float calIntegral(FUNCTION func);//计算定积分
-}
+        
+        //重点: 计算定积分 - 通过函数指针来实现接口回调
+        float calIntegral(FUNCTION func);
+};
 
 #endif
