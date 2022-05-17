@@ -16,10 +16,10 @@ class StringArray
         void input1();//输入字符串数组
         void input2();//输入字符串数组
         void display1();//显示字符串数组
-        void display2(char **s);//显示字符串数组
-        void display3();//显示字符串数组
+        void display2(char s[SIZE][LEN]);//显示字符串数
+        void display3(char **s);//显示字符串数组
         void sort1();//排序字符串数组
-        void sort2();//排序字符串数组
+        void sort2(char s[SIZE][LEN]);//排序字符串数组
         void sort3();//排序字符串数组
 
         //char (*p)[LEN] getStr();//返回字符型二维数组

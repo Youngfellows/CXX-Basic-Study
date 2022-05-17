@@ -20,6 +20,11 @@ void test1()
 void test2()
 {
     cout << "test2():: ~~~~" << endl;
+    StringArray *array = new StringArray(); 
+    //通过指针调用函数
+    array->input2();
+    
+    delete array;
 }
 
 //在文件外实现接口定义的函数 - test3()函数
