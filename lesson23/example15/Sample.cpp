@@ -17,6 +17,9 @@ void test()
         sort->display(p);//显示数组元素
         sort->sort(p);//排序数组元素
         sort->display(p);//显示数组元素
+        
+        //释放内存
+        free(p);
     }catch(const char *err)
     {
         cout << "catch error:" << err << endl;
