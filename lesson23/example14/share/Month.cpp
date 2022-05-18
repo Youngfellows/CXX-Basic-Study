@@ -14,7 +14,7 @@ Month::~Month()
 }
 
 //在类外实现函数 - get()函数
-char * Month::get(int month)
+const char * Month::get(int month)
 {
     cout << "get() ..." << endl;
     if((month >= 1) && (month <= 12))
