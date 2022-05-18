@@ -14,7 +14,7 @@ void test()
     //通过指针访问函数
     try
     {
-        char *result = pmonth->get(month);
+        const char *result = pmonth->get(month);
         cout << "result=" << result << endl;
     }catch(int err)
     {
