@@ -47,6 +47,26 @@ void test2()
 void test3()
 {
     cout << "test3() ..." << endl;
+    //创建对象,动态申请内存
+    ManageSystem *manage = new ManageSystem();
+    try
+    {
+        cout << "请输入学生数量:" << endl;
+        int size;
+        cin >> size;
+        Student *s = manage->input(size);//输入学生信息
+        manage->display(s);//显示学生信息
+    }catch(char *err)
+    {
+        cout << "error,err=" << err << endl;
+    }catch(...)
+    {
+        cout << "error,size is 0" << endl; 
+    }
+
+
+    //释放内存
+    delete manage;
 }
 
 //在文件外实现接口函数 - test1()函数

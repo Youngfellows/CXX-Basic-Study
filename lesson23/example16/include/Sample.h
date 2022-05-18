@@ -3,6 +3,7 @@
 
 #include "./Course.h"
 #include "./Student.h"
+#include "./ManageSystem.h"
 
 //定义接口函数
 void test1();
