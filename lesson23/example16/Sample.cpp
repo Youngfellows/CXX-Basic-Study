@@ -51,7 +51,7 @@ void test3()
     ManageSystem *manage = new ManageSystem();
     try
     {
-        cout << "请输入学生数量:" << endl;
+        cout << "请输入学生数量:";
         int size;
         cin >> size;
         Student *s = manage->input(size);//输入学生信息

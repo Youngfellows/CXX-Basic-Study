@@ -54,8 +54,11 @@ Student *ManageSystem::input(int size)
             char *p = buff;//指针变量指向字符串buff
             sprintf(p,"历史%d",i + 1);
             cout << p << endl;
-            Course *course = new Course(p,77 + i);
-            courses[i] = *course;//通过*解引用,获取Course对象
+            // Course *course = new Course(p,77 + i);
+            // courses[i] = *course;//通过*解引用,获取Course对象
+
+            Course course(p,77 + i);
+            courses[i] = course;//通过*解引用,获取Course对象
         }
         //设置课程数组
         student->setCourse(courses);
@@ -70,6 +73,26 @@ Student *ManageSystem::input(int size)
 
     //使对象指针pStudent指向学生对象数组
     pStudent = this->students;//指针变量pStudent指向Student对象数组的首元素
+    cout << "==================HHHHHH==================" << endl;
+    display(this->pStudent);
+    cout << "==================ZZZZZZ==================" << endl;
+
+    //动态申请内存,返回指向对象的指针变量,错误
+    // Student *s = new Student[this->size];
+    // for(int i = 0; i < this->size; i++)
+    // {
+    //     *(s + i) = this->students[i];
+    // }
+
+    //动态申请内存,返回指向对象的指针变量
+    Student *s = (Student *)malloc(this->size * sizeof(Student));
+    for(int i = 0; i < this->size; i++)
+    {
+        *(s + i) = this->students[i];//为动态数组赋值
+    }
+
+    //return this->pStudent;//不能这样返回
+    return s;
 }
 
 //在类外实现函数 - averageCourse()函数
