@@ -19,8 +19,8 @@ int **Sort::input(int number)
     if(number > SIZE)
     {
         char buff[128];
-        const char *err = buff;
-        fprintf(stdout, "输入的数%d大于%d",number,SIZE);
+        char *err = buff;
+        sprintf(err, "输入的数%d大于%d",number,SIZE);
         cout << err << endl;
         throw err;
     }else if(number <= 0)

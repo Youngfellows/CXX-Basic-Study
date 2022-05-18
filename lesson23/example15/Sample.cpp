@@ -20,7 +20,7 @@ void test()
         
         //释放内存
         free(p);
-    }catch(const char *err)
+    }catch(char *err)
     {
         cout << "catch error:" << err << endl;
     }catch(...){
