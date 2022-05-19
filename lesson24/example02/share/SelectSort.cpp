@@ -69,7 +69,7 @@ void SelectSort::display(int *num)
     cout << endl;
 }
 
-//在类外实现函数 - sort()函数 - 使用选择排序法
+//在类外实现函数 - sort()函数 - 使用冒泡排序法
 int * SelectSort::sort(int *num)
 {
     cout << "sort():: ..." << endl;
@@ -97,6 +97,36 @@ int * SelectSort::sort(int *num)
             temp = *(this->pNum + i);
             *(this->pNum + i) = *(this->pNum + min);
             *(this->pNum + min) = temp;
+        }
+        this->display();
+    }
+    return this->pNum;
+}
+
+//在类外实现函数 - sort()函数 - 使用冒泡排序法
+int * SelectSort::selectSort(int *num)
+{
+    cout << "selectSort():: ..." << endl;
+    int temp;//临时变量
+    for(int i = 0; i < this->size - 1; i++)
+    {
+        int min = i;//每一轮的第一个元素,最小值元素,依次与后面的数比较并交换
+        for(int j = i + 1; j < this->size; j++)
+        {
+            int a = *(this->pNum + min);
+            int b = *(this->pNum + j);
+
+            cout << "i:" << i << "j:" << j << ",min:" << min << ",a:" << a << ",b:" << b << endl;
+            if(a > b)
+            {
+                //记录最小值元素
+                min = j;
+                cout << "change,min=" << min << endl;
+                //交换元素,把最小值拿到前面
+                temp = *(this->pNum + i);
+                *(this->pNum + i) = *(this->pNum + min);
+                *(this->pNum + min) = temp;
+            }
         }
         this->display();
     }

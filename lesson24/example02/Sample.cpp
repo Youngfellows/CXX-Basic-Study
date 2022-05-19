@@ -14,7 +14,8 @@ void test()
         cin >> size;
         int *p = select->input(size);//输入数组元素
         select->display();//显示数组元素
-        p = select->sort(p);//选择排序
+        //p = select->sort(p);//选择排序
+        p = select->selectSort(p);
         select->display(p);//输出数组元素
     }catch(char *err)
     {
