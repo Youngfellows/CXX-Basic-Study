@@ -56,6 +56,12 @@ void test3()
         cin >> size;
         manage->input(size);//输入学生信息
         manage->display();//显示学生信息
+
+        cout << "222222222222222222222222222222" << endl;
+        Student *s = manage->get();//获取学生信息数组
+        manage->display(s);//打印学生信息
+        manage->fail2(s);//获取不及格学生信息
+
     }catch(char *err)
     {
         cout << "error,err=" << err << endl;

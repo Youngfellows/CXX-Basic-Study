@@ -24,14 +24,20 @@ Student::~Student()
 void Student::setCourse(Course *course)
 {
     cout << "setCourse() ..." << endl;
-    //this->pcourse = course;
     for(int i = 0; i < COUNT; i++)
     {
         //cout << "setCourse():: 1,cName:" << (*(course + i)).getCName() << "cScore:" << (*(course + i)).getScore() << endl;
         this->courses[i] = *(course + i);
         //cout << "setCourse():: 2,cName:" << (this->courses[i]).getCName() << "cScore:" << (this->courses[i]).getScore() << endl;
     }
+    //Course * 指针变量pcourse指向课程数组
+    this->pcourse = this->courses;
+}
 
+//在类外实现函数 - averageScore()函数
+Course * Student::getCourse()
+{
+    return this->pcourse;
 }
 
 //在类外实现函数 - averageScore()函数

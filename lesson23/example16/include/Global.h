@@ -16,4 +16,16 @@ const int SIZE = 4;
 //常量 - 课程数量
 const int COUNT = 5;
 
+//常量 - 不及格课程数
+const int FAIL_COUNT = 2;
+
+//常量 - 不及格分数
+const float FAIL_SCORE = 60;
+
+//常量 - 优秀分数1
+const float GOOD_SCORE_1 = 85;
+
+//常量 - 优秀分数2
+const float GOOD_SCORE_2 = 90;
+
 #endif

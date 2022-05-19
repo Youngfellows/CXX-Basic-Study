@@ -51,7 +51,7 @@ void ManageSystem::input(int size)
             // Course *course = new Course(p,77 + i);
             // courses[i] = *course;//通过*解引用,获取Course对象
 
-            Course course(p,77 + i);
+            Course course(p,57 + i);
             courses[i] = course;//通过*解引用,获取Course对象
         }
         //设置课程数组
@@ -94,6 +94,51 @@ void ManageSystem::good()//找出全部85分或者平均成绩90以上的学生
    
 }
 
+//在类外实现函数 - averageCourse()函数
+float * ManageSystem::averageCourse(Student *s)//求每一门课程的平均成绩
+{
+    cout << "averageCourse() ..." << endl;
+    return NULL;
+}
+
+//在类外实现函数 - fail2()函数
+void ManageSystem::fail2(Student *s)//找出两门以上课程不及格的学生
+{
+    cout << "====两门以上课程不及格的学生===" << endl;
+    cout << "fail2():: ..." << endl;
+    for(int i = 0; i < this->size; i++)
+    {
+        Student s1 = *(s + 1);//学生对象
+        Course *c = s1.getCourse();//获取每个学生的课程信息数组,返回的是指向数组的指针变量
+        //(*(s + i)).display();
+        int fail = 0;//不及格课程数量
+        for(int j = 0; j < COUNT; j++)
+        {
+           char *cName = c->getCName();
+           float cScore = c->getScore();
+           cout << "fail2():: cName:" << cName << endl;
+           cout << "fail2():: cScore:" << cScore << endl;
+           if(cScore <= FAIL_SCORE)
+           {
+               fail++;
+           }
+        }
+        //不及格课程超过2门
+        if(fail >= FAIL_COUNT)
+        {
+            s1.display();//打印不及格学生信息
+        }
+    } 
+    
+}
+
+//在类外实现函数 - good()函数
+void ManageSystem::good(Student *s)//找出全部85分或者平均成绩90以上的学生
+{
+    cout << "good() ..." << endl;
+   
+}
+
 //在类外实现函数 - display()函数
 void ManageSystem::display()//打印学生信息
 {
@@ -102,6 +147,22 @@ void ManageSystem::display()//打印学生信息
     {
         //(*(this->pStudent + i)).display();
         (this->students[i]).display();
+    }
+}
+
+//在类外实现函数 - get()函数,获取学生列表,返回的是指向Student数组对象的指针
+Student * ManageSystem::get()
+{
+    return this->pStudent;
+}
+
+//在类外实现函数 - display()函数
+void ManageSystem::display(Student *s)//打印学生信息
+{
+    cout << "display():: ... 222 ..." << endl;
+    for(int i = 0; i < this->size; i++)
+    {
+        (*(s + i)).display();
     }
 }
 
