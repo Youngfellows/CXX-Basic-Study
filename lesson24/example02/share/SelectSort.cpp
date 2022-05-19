@@ -103,7 +103,7 @@ int * SelectSort::sort(int *num)
     return this->pNum;
 }
 
-//在类外实现函数 - sort()函数 - 使用冒泡排序法
+//在类外实现函数 - sort()函数 - 使用选择排序法
 int * SelectSort::selectSort(int *num)
 {
     cout << "selectSort():: ..." << endl;
@@ -119,13 +119,11 @@ int * SelectSort::selectSort(int *num)
             cout << "i:" << i << "j:" << j << ",min:" << min << ",a:" << a << ",b:" << b << endl;
             if(a > b)
             {
-                //记录最小值元素
-                min = j;
                 cout << "change,min=" << min << endl;
                 //交换元素,把最小值拿到前面
-                temp = *(this->pNum + i);
-                *(this->pNum + i) = *(this->pNum + min);
-                *(this->pNum + min) = temp;
+                temp = *(this->pNum + min);
+                *(this->pNum + min) = *(this->pNum + j);
+                *(this->pNum + j) = temp;
             }
         }
         this->display();

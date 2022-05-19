@@ -5,5 +5,6 @@
 
 //定义接口方法
 void test();
+void test1();
 
 #endif
