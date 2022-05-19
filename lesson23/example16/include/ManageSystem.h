@@ -14,13 +14,12 @@ class ManageSystem
 
     public:
         ManageSystem();//构造函数
-        ManageSystem(Student s[SIZE]);//构造函数
         ~ManageSystem();//析构函数
-        Student *input(int size);//输入学生信息
+        void input(int size);//输入学生信息
         float * averageCourse();//求每一门课程的平均成绩
-        Student *fail2();//找出两门以上课程不及格的学生
-        Student *good();//找出全部85分或者平均成绩90以上的学生
-        void display(Student *p);//打印学生信息
+        void fail2();//找出两门以上课程不及格的学生
+        void good();//找出全部85分或者平均成绩90以上的学生
+        void display();//打印学生信息
 };
 
 #endif

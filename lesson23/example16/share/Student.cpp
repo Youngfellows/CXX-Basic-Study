@@ -9,18 +9,9 @@ Student::Student()
 //在类外实现函数 - 构造函数
 Student::Student(int number,char name[LEN])
 {
-    cout << "Student()构造函数" << endl;
+    cout << "Student()构造函数1" << endl;
     this->number = number;
     strcpy(this->name,name);
-}
-
-//在类外实现函数 - 构造函数
-Student::Student(int number,char name[LEN],Course courses[COUNT])
-{
-    cout << "Student()构造函数" << endl;
-    this->number = number;
-    strcpy(this->name,name);
-    this->pcourse = courses;
 }
 
 //在类外实现函数 - 析构函数
@@ -30,10 +21,17 @@ Student::~Student()
 }
 
 //在类外实现函数 - setCourse()函数 - 设置课程
-void Student::setCourse(Course courses[COUNT])
+void Student::setCourse(Course *course)
 {
     cout << "setCourse() ..." << endl;
-    this->pcourse = courses;
+    //this->pcourse = course;
+    for(int i = 0; i < COUNT; i++)
+    {
+        //cout << "setCourse():: 1,cName:" << (*(course + i)).getCName() << "cScore:" << (*(course + i)).getScore() << endl;
+        this->courses[i] = *(course + i);
+        //cout << "setCourse():: 2,cName:" << (this->courses[i]).getCName() << "cScore:" << (this->courses[i]).getScore() << endl;
+    }
+
 }
 
 //在类外实现函数 - averageScore()函数
@@ -43,7 +41,7 @@ float Student::averageScore()
     float sum = 0;//总成绩
     for(int i = 0; i < COUNT; i++)
     {
-       sum += (*(this->pcourse + i)).getScore();
+       sum += (this->courses[i]).getScore();
     }
     float ave = sum / COUNT;
     return ave;
@@ -56,7 +54,7 @@ float Student::totalScore()
     float sum = 0;//总成绩
     for(int i = 0; i < COUNT; i++)
     {
-       sum += (*(this->pcourse + i)).getScore();
+       sum += (this->courses[i]).getScore();
     }
     return sum;
 }
@@ -64,21 +62,23 @@ float Student::totalScore()
 //在类外实现函数 - display()函数
 void Student::display()
 {
-    cout << "display() ..." << endl;
-    cout << "number:" << this->number << endl;
-    cout << "name:" << this->name << endl;
+    cout << "=================display()显示信息=====================" << endl;
+    cout << "Student::display():: ... " << endl;
+    cout << "Student::display():: courses:" << courses << endl;
+    cout << "Student::display():: number:" << this->number << endl;
+    cout << "Student::display():: name:" << this->name << endl;
     cout << "======" << COUNT << "门课程信息======" << endl;
     for(int i = 0; i < COUNT; i++)
     {
-        // cout.width(8);
-        cout << (*(this->pcourse + i)).getCName() << "\t" ;
+        //cout << (*(this->pcourse + i)).getCName() << "\t" ;
+        cout << (this->courses[i]).getCName() << "\t" ;
     }
     //cout.width(10);
-    cout << "平均成绩" << " " << "总成绩" << endl;
+    cout << "平均成绩" << "\t" << "总成绩" << endl;
     for(int i = 0; i < COUNT; i++)
     {
-        // cout.width(10);
-        cout << (*(this->pcourse + i)).getScore() << "\t" ;
+        //cout << (*(this->pcourse + i)).getScore() << "\t" ;
+        cout << (this->courses[i]).getScore() << "\t" ;
     }
     cout << averageScore() << "\t" << totalScore() << endl;
     cout << endl;

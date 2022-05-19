@@ -50,12 +50,12 @@ void test3()
     //创建对象,动态申请内存
     ManageSystem *manage = new ManageSystem();
     try
-    {
+    {   
         cout << "请输入学生数量:";
         int size;
         cin >> size;
-        Student *s = manage->input(size);//输入学生信息
-        manage->display(s);//显示学生信息
+        manage->input(size);//输入学生信息
+        manage->display();//显示学生信息
     }catch(char *err)
     {
         cout << "error,err=" << err << endl;
@@ -63,8 +63,6 @@ void test3()
     {
         cout << "error,size is 0" << endl; 
     }
-
-
     //释放内存
     delete manage;
 }
