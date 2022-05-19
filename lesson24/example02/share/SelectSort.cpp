@@ -142,6 +142,46 @@ int * SelectSort::selectSort(int *num)
     return this->pNum;
 }
 
+//在类外实现函数 - search()函数 - 折半查找法查找该元素在数组中的位置
+int * SelectSort::search(int *pNum,int num)
+{
+    cout << "search():: ..." << endl;
+
+    //不在数组中
+    if((num < *pNum) || (num > *(pNum + this->size - 1)))
+    {
+        return NULL;
+    } 
+
+    int start = 0;//查找区间的开始位置
+    int end = this->size - 1;//查找区间的末尾位置
+    bool sign = false;//是否查找到的标准
+    int mid = 0;//中间元素的下标
+    while(!sign)
+    {
+        mid = (start + end) / 2;//中间元素的下标
+        if(*(pNum + mid) == num)
+        {
+            sign = true;
+        }else if(*(pNum + mid) > num)
+        {
+            end = mid -1;//比中间元素小
+        }else
+        {
+            start = mid + 1;//比中间元素大
+        }
+    }
+
+    if(sign)
+    {
+        //动态申请内存,指向值mid
+        int *pos = new int(mid);//范围找到元素的位置
+        return pos;
+    }
+
+    return NULL;
+}
+
 //在类外实现函数 - insert()函数 - 插入元素的数组中
 int * SelectSort::insert(int *pNum,int num)
 {

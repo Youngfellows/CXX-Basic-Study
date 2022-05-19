@@ -49,6 +49,19 @@ void test1()
         //p = select->selectSort(p);//选择排序
         select->display(p);//输出数组元素
 
+        cout << "请输入要查找的元素:";
+        int searchNum;
+        cin >> searchNum;
+        int *search = select->search(p,searchNum);//折半查找法,查找元素
+        if(search != NULL)
+        {
+            int pos = *search;//取元素值
+            cout << "元素:" << searchNum << "在数组中的位置是:" << pos << endl;
+        }else
+        {
+            cout << "在数组中未找到" << searchNum << "元素" << endl;
+        }
+
         cout << "输入要插入的元素:";
         int number;
         cin >> number;
