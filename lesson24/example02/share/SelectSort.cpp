@@ -69,6 +69,17 @@ void SelectSort::display(int *num)
     cout << endl;
 }
 
+//在类外实现函数 - display()函数
+void SelectSort::display2(int *num)
+{
+    cout << "display():: -^_^- " << endl;
+    for(int i = 0; i < this->size + 1; i++)
+    {
+        cout << *(num + i) << " ";
+    }
+    cout << endl;
+}
+
 //在类外实现函数 - sort()函数 - 使用冒泡排序法
 int * SelectSort::sort(int *num)
 {
@@ -130,3 +141,42 @@ int * SelectSort::selectSort(int *num)
     }
     return this->pNum;
 }
+
+//在类外实现函数 - insert()函数 - 插入元素的数组中
+int * SelectSort::insert(int *pNum,int num)
+{
+    cout << "insert():: ... " << endl;
+    display();
+    for(int i = 0; i < this->size; i++)
+    {
+        if(*(this->pNum + i) > num)
+        {
+            //移动后面的元素
+            for(int j = this->size; j >= i; j--)
+            {
+               *(this->pNum + j + 1) = *(this->pNum + j); 
+            }
+            //把num插入到i位置
+            *(this->pNum + i) = num;
+            break;//结束循环
+        }
+    }
+
+    return this->pNum;
+}
+
+//在类外实现函数 - reverse()函数 - 逆序数组元素
+int *SelectSort::reverse(int *pNum)
+{
+    cout << "reverse():: ..." << endl;
+    for(int i = 0; i < (this->size) / 2; i++)
+    {
+        //交换元素
+        int temp = *(pNum + i);
+        cout << "temp:" << temp << "*(pNum + this->size - " << i << ")=" << *(pNum + this->size - i) << endl;
+        *(pNum + i) = *(pNum + this->size - i);
+        *(pNum + this->size - i) = temp;
+    }
+    return pNum;
+}
+

@@ -17,8 +17,11 @@ class SelectSort
         int * input(int size);//输入数组元素
         int * sort(int *pNum);//使用选择排序法排序数组元素,并返回排序后的数组
         int * selectSort(int *pNum);//使用选择排序法排序数组元素,并返回排序后的数组
+        int * insert(int *pNum,int num);//把一个数字插入有序数组中
+        int * reverse(int *pNum);//逆序数组元素
         void display();//打印数组元素
         void display(int *pNum);//显示数组元素
+        void display2(int *pNum);//显示插入元素后的数组
 
     private:
         int *input();//输入数组元素

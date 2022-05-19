@@ -48,6 +48,15 @@ void test1()
         p = select->sort(p);//冒泡排序
         //p = select->selectSort(p);//选择排序
         select->display(p);//输出数组元素
+
+        cout << "输入要插入的元素:";
+        int number;
+        cin >> number;
+        p = select->insert(p,number);//插入元素到数组
+        select->display2(p);//输出数组元素
+
+        select->reverse(p);//逆序数组元素
+        select->display2(p);//输出数组元素
     }catch(char *err)
     {
         cout << "catch,err:" << err << endl;

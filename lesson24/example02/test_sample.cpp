@@ -2,7 +2,7 @@
 
 int main(int arg,char *args[])
 {
-    test();
+    //test();
     test1();
     return 0;
 }
