@@ -57,6 +57,8 @@ void test1()
         {
             int pos = *search;//取元素值
             cout << "元素:" << searchNum << "在数组中的位置是:" << pos << endl;
+            //释放内存
+            delete search;
         }else
         {
             cout << "在数组中未找到" << searchNum << "元素" << endl;
