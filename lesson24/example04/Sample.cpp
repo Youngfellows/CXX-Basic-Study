@@ -4,4 +4,9 @@
 void test()
 {
     cout << "test():: ..." << endl;
+    //创建对象,动态申请内存
+    YanghuiTriangle *triangle = new YanghuiTriangle();
+
+    //释放内存
+    delete triangle;
 }

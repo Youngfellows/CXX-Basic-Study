@@ -7,9 +7,9 @@
 using namespace std;
 
 //常量 - 二维数组行数
-const int M = 3;
+const int M = 11;
 
 //常量 - 二维数组列数
-const int N = 3;
+const int N = 11;
 
 #endif
