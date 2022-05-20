@@ -165,33 +165,20 @@ int (* YanghuiTriangle::parse2(int **pNum))[N]
             tNum[i][j] = ele;
         }
     }
-
-    cout << "***************************************" << endl;
-    for(int i = 0; i < M; i++)
-    {
-        for(int j = 0; j < N; j++)
-        {
-            //tNum[i][j] = *(*(pNum + i) + j);//拷贝元素
-            //cout << "tNum[" << i << "][" << j << "]=" << tNum[i][j] << " ";
-            int ele = tNum[i][j];
-            cout.width(3);
-            cout << ele << " ";
-        }
-        cout << endl;
-    }
-
+    cout << "========================================" << endl;
     //返回的是指向一维数组的指针变量的地址
-    //int (*data)[N] = new int[M][N];//error,局部new开辟的内存数据不可靠
+    // int (*data)[N] = new int[M][N];//局部new开辟的内存,一定要为空间赋值,否则数据不可靠
     //动态申请内存,创建一个指向一维数组的指针变量
     int (*data)[N] = (int (*)[N])malloc(M * sizeof(N * sizeof(int)));
-    data = tNum;//指向一维数组的指针变量,指向二维数组的首行
-    cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
+
     for(int i = 0; i < M; i++)
     {
         for(int j = 0; j < N; j++)
         {
             //tNum[i][j] = *(*(pNum + i) + j);//拷贝元素
             //cout << "tNum[" << i << "][" << j << "]=" << tNum[i][j] << " ";
+            //为申请的空间赋值,否则会数据错乱,数据不可靠
+            *(*(data + i) + j) = tNum[i][j];
             int ele = *(*(data + i) + j);
             cout.width(3);
             cout << ele << " ";
@@ -199,6 +186,7 @@ int (* YanghuiTriangle::parse2(int **pNum))[N]
         cout << endl;
     }
     cout << "data:" << data << endl;
+    cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
     return data;     
 }
 //显示杨辉三角

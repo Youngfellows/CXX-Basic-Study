@@ -6,6 +6,6 @@ int main(int arg,char *args[])
     test2();
     test3();
     test4();
-    // test5();//error,会数据错乱
+    test5();
     return 0;
 }

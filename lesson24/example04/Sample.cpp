@@ -106,5 +106,6 @@ void test5()
     triangle->display(pNum2);//打印二维数组,显示杨辉三角
 
     //释放内存
+    free(pNum2);
     delete triangle;
 }
