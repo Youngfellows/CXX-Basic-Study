@@ -3,6 +3,7 @@
 
 //定义全局引用和常量
 #include<iostream>
+#include<ctime>
 
 using namespace std;
 
