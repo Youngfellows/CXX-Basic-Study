@@ -6,10 +6,7 @@
 
 using namespace std;
 
-//常量 - 二维数组行数
-const int M = 3;
-
-//常量 - 二维数组列数
-const int N = 3;
+//常量 - 月份数
+const int SIZE = 12;
 
 #endif
