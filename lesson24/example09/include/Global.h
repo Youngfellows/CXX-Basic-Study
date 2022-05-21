@@ -12,4 +12,7 @@ const int SIZE = 3;
 //常量 - 二维数组的列
 const int LEN = 128;
 
+//常量 - 保存字符个数的数组
+const int SIZE_CHAR_NUM = 5;
+
 #endif

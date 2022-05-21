@@ -17,8 +17,17 @@ void test1()
     char (*pText)[LEN] = array->get2();//获取字符串二维数组
     array->display(pText);//显示字符串二维数组
 
+    int *result =  array->calc(p);//统计字符个数
+    for(int i = 0; i < SIZE_CHAR_NUM; i++)
+    {
+        int num = *(result + i);
+        cout << num << " " ;
+    }
+    cout << endl;
+
     //释放内存
     free(p);
+    free(result);
     //delete pText;
     delete array;
 }

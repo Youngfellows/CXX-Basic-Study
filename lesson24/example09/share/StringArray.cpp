@@ -21,7 +21,8 @@ char ** StringArray::input()
     {
         cout << "text[" << i << "]=";
         //cin >> text[i];
-        cin >> *(text + i);
+        //cin >> *(text + i);
+        fgets(*(text + i),LEN,stdin);
     }
 
     return NULL;
@@ -97,4 +98,57 @@ void StringArray::display(char (*text)[LEN])
     {
         cout << *(text + i) << endl;
     }
+}
+
+//统计字符个数,返回值存入一个数组中
+int * StringArray::calc(char **pText)
+{
+    cout << "calc():: ..." << endl;
+    int upper = 0;//大写字母个数
+    int lower = 0;//小写字母
+    int digit = 0;//数字
+    int space = 0;//空格
+    int other = 0;//其他
+    
+    for(int i = 0; i < SIZE; i++)
+    {
+        char *s = *(pText + i);
+        //cout << s ;
+        int j = 0;
+        char ch;
+        while((ch = *(s + j)) != '\0')
+        {
+            if(ch >= 'A' && ch <= 'Z')
+            {
+                upper++;
+            }else if(ch >= 'a' && ch <= 'z')
+            {
+                lower++;
+            }else if(ch >= '0' && ch <= '9')
+            {
+                digit++;
+            }else if(ch == ' ')
+            {
+                space++;
+            }else {
+                other++;
+            }
+            j++;
+        }
+    }
+    cout << "upper:" << upper << endl;
+    cout << "lower:" << lower << endl;
+    cout << "digit:" << digit << endl;
+    cout << "space:" << space << endl;
+    cout << "other:" << other << endl;
+
+    //动态申请内存,向内存写入要保存字符个数
+    int * data = (int *)malloc(SIZE_CHAR_NUM * sizeof(int));
+    *data = upper;
+    *(data + 1) = lower;
+    *(data + 2) = digit;
+    *(data + 3) = space;
+    *(data + 4) = other;
+
+    return data;
 }
