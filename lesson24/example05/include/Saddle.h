@@ -18,7 +18,7 @@ class Saddle
         int **getEle();//获取二维数组元素,返回的是一个指向指针的指针
         int **getEle2();//获取二维数组元素,返回的是一个指向指针的指针
         int (*getElement())[N];//获取二维数组元素,返回的是一个指向一维数组元素的指针变量
-        int ** parse(int **pNum);//解析杨辉三角
+        int ** parse(int **pNum);//解析鞍点
         int (*parse(int (*pNum)[N]))[N];//获取鞍点,参数是指向一维数组的指针变量,返回值也是指向一维数组的指针变量
         int **parse2(int (*pNum)[N]);//解析鞍点,参数是指向一维数组的指针
         int (*parse2(int **pNum))[N];//获取鞍点,参数是指向指针的指针,返回值是指向一维数组的指针

@@ -40,8 +40,17 @@ void Saddle::init()
             int random = rand() % 100;
             *(*(this->pNum + i) + j) = random;//为数组元素赋值
         }
-
     }
+
+    //测试是否是鞍点的二维数组,33是鞍点
+    // int temp[M][N] = {{11,22,33},{23,33,44},{99,77,55}};
+    // for(int i = 0; i < M; i++)
+    // {
+    //     for(int j = 0; j < N; j++)
+    //     {
+    //         *(*(this->pNum + i) + j) = temp[i][j];
+    //     }
+    // }
 }
 
 //获取二维数组元素,返回的是一个指向指针的指针
@@ -83,17 +92,111 @@ int (* Saddle::getElement())[N]
     return data;
 }
 
-//解析鞍点
+//解析鞍点,行中最大,列中最小
 int ** Saddle::parse(int **pNum)
 {
-    cout << "parse():: 1 ..." << endl;     
+    cout << "parse():: 1 ..." << endl;
+    int max;//最大值
+    int maxj;//行最大值列
+    int posX = -1;//鞍点的x坐标
+    int posY = -1;//鞍点的y坐标
+    bool flag = false;//是否是鞍点
+    for(int i = 0; i < M; i++) //行
+    {
+        max = *(*(pNum + i) + 0);//第一个元素max = number[i][0]
+        maxj = 0;
+        for(int j = 0; j < N; j++)//找到行中最大值
+        {
+            if(max < *(*(pNum + i) + j))
+            {
+                max = *(*(pNum + i) + j);//记录最大值
+                maxj = j;//行中最大值所在列
+            }
+        }
+        cout << "max=" << max << ",i=" << i <<  ",maxj=" << maxj << endl;
+
+        //判断该元素是否也是列中最小的元素
+        flag = true;//先假设是鞍点
+        for(int k = 0; k < M; k++)
+        {
+            if(max > *(*(pNum + k) + maxj))
+            {
+                flag = false;//有比它小的,不是鞍点
+                break;
+            }
+        }
+        //是鞍点
+        if(flag)
+        {
+            posX = i;
+            posY = maxj;
+            cout << max << "是鞍数,位置(" << posX << "," << posY << ")" << endl;
+            break;
+        }
+    }
+
+    if(flag)
+    {
+        cout << max << "是鞍数,位置(" << posX << "," << posY << ")" << endl;
+    }else
+    {
+        cout << "没有鞍点" << endl;
+    }
+
     return NULL; 
 }
 
 //获取鞍点,参数是指向一维数组的指针变量,返回值也是指向一维数组的指针变量
 int (* Saddle::parse(int (*pNum)[N]))[N]
 {
-    cout << "parse():: 2 ..." << endl;  
+    cout << "parse():: 2 ..." << endl;
+    int max;//最大值
+    int maxj;//行最大值列
+    int posX = -1;//鞍点的x坐标
+    int posY = -1;//鞍点的y坐标
+    bool flag = false;//是否是鞍点
+    for(int i = 0; i < M; i++) //行
+    {
+        max = *(*(pNum + i) + 0);//第一个元素max = number[i][0]
+        maxj = 0;
+        for(int j = 0; j < N; j++)//找到行中最大值
+        {
+            if(max < *(*(pNum + i) + j))
+            {
+                max = *(*(pNum + i) + j);//记录最大值
+                maxj = j;//行中最大值所在列
+            }
+        }
+        cout << "max=" << max << ",i=" << i <<  ",maxj=" << maxj << endl;
+
+        //判断该元素是否也是列中最小的元素
+        flag = true;//先假设是鞍点
+        for(int k = 0; k < M; k++)
+        {
+            if(max > *(*(pNum + k) + maxj))
+            {
+                flag = false;//有比它小的,不是鞍点
+                break;
+            }
+        }
+        //是鞍点
+        if(flag)
+        {
+            posX = i;
+            posY = maxj;
+            cout << max << "是鞍数,位置(" << posX << "," << posY << ")" << endl;
+            break;
+        }
+    }
+
+    if(flag)
+    {
+        cout << max << "是鞍数,位置(" << posX << "," << posY << ")" << endl;
+    }else
+    {
+        cout << "没有鞍点" << endl;
+    }
+
     return NULL;      
 }
 

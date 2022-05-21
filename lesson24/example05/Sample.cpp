@@ -19,6 +19,10 @@ void test()
     cout << "p2:" << p2 << endl;
     saddle->display(p2);
 
+    //判断是否有鞍点
+    saddle->parse(p2);
+    saddle->parse(pNum);
+
     //释放内存
     free(p2);
     delete saddle;
