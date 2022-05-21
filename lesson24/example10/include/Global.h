@@ -3,6 +3,7 @@
 
 //全局引用和常量
 #include<iostream>
+#include<cstring>
 
 using namespace std;
 

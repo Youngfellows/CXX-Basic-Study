@@ -98,3 +98,53 @@ void StringArray::display(char (*text)[LEN])
         cout << *(text + i) << endl;
     }
 }
+
+/**
+ * @brief 过滤字符串,返回字符串数组
+ * 
+ * @param p 
+ * @param callback 函数指针回调函数,返回过滤后的字符串数组和数组的大小
+ */
+void StringArray::filter(char **p,void (*callback)(char **p,int size))
+{
+    cout << "filter():: ... " << endl;
+    int count = 0;
+    char temp[SIZE][LEN];
+
+    for(int i = 0; i < SIZE; i++)
+    {
+        char *s = *(p + i);
+        if(*s == 'A') //字符串是否以A开头
+        {
+            //temp[count++] = s;//拷贝以A开头的字符串到数组
+            strcpy(temp[count],s);
+            cout << "xxx: " << temp[count] << endl;
+            count++;
+        }
+    }
+
+    cout << "count:" << count << endl;
+    if(count > 0)
+    {
+        char *pText[count];
+        for(int i = 0; i < count; i++)
+        {
+            pText[i] = temp[i];//保存二维数组的地址
+        }
+
+        //动态申请内存
+        char **data = (char **)malloc(count * sizeof(char *));
+        //为内存空间赋值
+        for(int i = 0; i < count; i++)
+        {
+            *(data + i) =  *(pText + i);
+        }
+        
+        //调用回调函数    
+        (*callback)(data,count);
+    }else
+    {
+        //调用回调函数
+        (*callback)(NULL,0);
+    }
+}

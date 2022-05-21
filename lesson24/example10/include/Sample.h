@@ -10,4 +10,7 @@ void test3();
 void test4();
 void test5();
 
+//回调函数
+void filterCallback(char **p,int size);
+
 #endif

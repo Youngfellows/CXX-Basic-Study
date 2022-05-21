@@ -17,10 +17,30 @@ void test1()
     char (*pText)[LEN] = array->get2();//获取字符串二维数组
     array->display(pText);//显示字符串二维数组
 
+    array->filter(p,filterCallback);//过滤函数
+
     //释放内存
     free(p);
     //delete pText;
     delete array;
+}
+
+/**
+ * @brief 回调函数
+ * 
+ * @param p 二维字符串数组
+ * @param size 数组长度
+ */
+void filterCallback(char **p,int size)
+{
+    cout << "filterCallback():: ..." << endl;
+    for(int i = 0; i < size; i++)
+    {
+        char *s = *(p + i);//获取字符串
+        cout << s << endl;
+    }
+    //释放内存
+    free(p);
 }
 
 //在文件外实现接口函数 - test2()函数
