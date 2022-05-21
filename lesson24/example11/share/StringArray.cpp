@@ -98,3 +98,57 @@ void StringArray::display(char (*text)[LEN])
         cout << *(text + i) << endl;
     }
 }
+
+//排序
+void StringArray::sort()
+{
+    char buff[LEN];//缓冲区
+    for(int i = 0; i < SIZE -1; i++)
+    {
+        for(int j = i; j < SIZE; j++)
+        {
+            if(strcmp(this->text[i],this->text[j]) < 0)
+            {
+                strcpy(buff,this->text[i]);
+                strcpy(this->text[i],this->text[j]);
+                strcpy(this->text[j],buff);
+            }
+        }  
+    }
+}
+
+//排序
+void StringArray::sort(char **pText)
+{
+    char buff[LEN];//缓冲区
+    for(int i = 0; i < SIZE -1; i++)
+    {
+        for(int j = i; j < SIZE; j++)
+        {
+            if(strcmp(*(pText + i),*(pText + j)) < 0)
+            {
+                strcpy(buff,*(pText + i));
+                strcpy(*(pText + i),*(pText + j));
+                strcpy(*(pText + j),buff);
+            }
+        }  
+    }
+}
+
+//排序
+void StringArray::sort(char (*pText)[LEN])
+{
+    char buff[LEN];//缓冲区
+    for(int i = 0; i < SIZE -1; i++)
+    {
+        for(int j = i; j < SIZE; j++)
+        {
+            if(strcmp(*(pText + i),*(pText + j)) < 0)
+            {
+                strcpy(buff,*(pText + i));
+                strcpy(*(pText + i),*(pText + j));
+                strcpy(*(pText + j),buff);
+            }
+        }  
+    }
+}

@@ -22,6 +22,9 @@ class StringArray
         void display();//打印二维字符串数组
         void display(char **text);//打印二维字符串数组,参数是指向指针的指针
         void display(char (*text)[LEN]);//打印二维字符串数组,参数是指向一维数组(一维数组的长度是LEN)的指针
+        void sort();//排序
+        void sort(char **pText);//排序
+        void sort(char (*pText)[LEN]);//排序
 };
 
 #endif
