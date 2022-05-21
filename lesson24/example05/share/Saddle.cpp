@@ -57,30 +57,18 @@ int ** Saddle::getEle2()
     cout << "getEle2():: ..." << endl;
     //动态申请内存,并为空间赋值,开辟M个连续保存int *数据的内存空间
     int **data = (int **)malloc(M * sizeof(int *));//二维数组的行,M行
-   
     for(int i = 0; i < M; i++)
     {
         //动态申请内存,并为空间赋值,开辟N个连续保存int数据的内存空间
         int * p = (int *)malloc(N * sizeof(int));//二维数组的列,N列
-        *data = p;//为二维数组每一行空间赋值,指向一个新开辟的连续内存
+        *(data + i) = p;//重点: 为二维数组每一行空间赋值,指向一个新开辟的连续内存
         for(int j = 0; j < N; j++)
         {
-            *p = this->number[i][j];//为新开辟的空间赋值
+            *(p + j) = this->number[i][j];//重点: 为新开辟的空间赋值
             //*(*(data + i) + j) = this->number[i][j];
         }
         //free(p);
     }
-    cout << "=========================================" << endl;
-    for(int i = 0; i < M; i++)
-    {
-        for(int j = 0; j < N; j++)
-        {
-            cout.width(3);
-            cout << this->number[i][j] << " ";
-        }
-        cout << endl;
-    }
-    cout << "=========================================" << endl;
     cout << "data:" << data << endl;
     return data;//返回新开辟的内存空间
 }
