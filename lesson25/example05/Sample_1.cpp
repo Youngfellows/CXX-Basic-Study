@@ -70,3 +70,25 @@ void test4()
     //释放内存
     delete p;
 }
+
+//在文件外实现接口函数 - test5()方法
+void test5()
+{
+    cout << "test5():: ..." << endl;
+    //创建对象,动态申请内存
+    MyNumeric *numeric = new MyNumeric(); 
+
+    //通过指针访问函数
+    char *s =  numeric->get();//或者字符数组
+    int size = numeric->getSize();//获取字符大小
+    for(int i = size; i >= 0; i--)
+    {
+        char ele = *(s + i);
+        cout.width(2);
+        cout << ele << " ";
+    }
+    cout << endl;
+
+    //释放内存
+    delete numeric;
+}
