@@ -55,3 +55,18 @@ void test3()
     free(p);
     delete godhaba;
 }
+
+//在文件外实现接口函数 - test4()方法
+void test4()
+{
+    cout << "test4():: ..." << endl;
+
+    //创建对象,动态申请内存
+    Polynomial *p = new Polynomial();
+    //通过指针访问函数
+    float result =  p->fx();
+    cout << "result=" << result << endl;
+
+    //释放内存
+    delete p;
+}
