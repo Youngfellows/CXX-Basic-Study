@@ -7,4 +7,7 @@
 
 using namespace std;
 
+//常量 - 数组长度
+const int SIZE_PRIME = 2;
+
 #endif

@@ -3,6 +3,7 @@
 
 #include "./Sinh.h"
 #include "./Equation.h"
+#include "./Godbaha.h"
 
 //定义接口函数
 void test1();
