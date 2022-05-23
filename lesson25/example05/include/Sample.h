@@ -6,6 +6,7 @@
 #include "./Godbaha.h"
 #include "./Polynomial.h"
 #include "./MyNumeric.h"
+#include "./Polynomial2.h"
 
 //定义接口函数
 void test1();

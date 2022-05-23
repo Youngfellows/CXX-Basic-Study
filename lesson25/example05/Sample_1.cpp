@@ -92,3 +92,18 @@ void test5()
     //释放内存
     delete numeric;
 }
+
+//在文件外实现接口函数 - test6()方法
+void test6()
+{
+    cout << "test6():: ..." << endl;
+
+    //创建对象,动态申请内存
+    Polynomial2 *p = new Polynomial2();
+    //通过指针访问函数
+    float result =  p->fn();
+    cout << "result=" << result << endl;
+
+    //释放内存
+    delete p;
+}
