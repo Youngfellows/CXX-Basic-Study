@@ -52,5 +52,6 @@ void test3()
     cout << "primeB:" << primeB << endl;
 
     //释放内存
+    free(p);
     delete godhaba;
 }
