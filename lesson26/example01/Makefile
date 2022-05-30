@@ -33,7 +33,7 @@ $(TARGET):$(OBJS)
 	@echo "_DEPS_MAIN=" $(_DEPS_MAIN)
 	@echo "_DEPS_SHARE=" $(_DEPS_SHARE)
 	@echo "OBJS=" $(OBJS)
-	$(CPP) $(CPPFLAGS) -o $(ODIR)/$@ $^	
+	$(CPP) $(CPPFLAGS) -o $(ODIR)/$@ $^	-lpthread
 	rm -rf ${OBJS}
 
 clean:

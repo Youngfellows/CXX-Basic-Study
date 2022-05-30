@@ -4,6 +4,8 @@
 //全局引用和常量
 #include<iostream>
 #include<thread>
+#include<string>
+#include<mutex>
 
 using namespace std;
 
