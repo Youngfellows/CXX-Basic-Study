@@ -11,6 +11,8 @@
 #include "./MyThread6.h"
 #include "./MyThread7.h"
 #include "./MyThread8.h"
+#include "./Wallet.h"
+#include "./Application.h"
 
 //定义接口函数
 void test1();

@@ -16,5 +16,7 @@ int main()
     test12();
     test13();
     //test14();有bug
+    test15();
+    test16();
     return 0;
 }
