@@ -2,6 +2,7 @@
 #define MY_FOREACH_H
 
 #include "./Global.h"
+#include "./Display.h"
 
 class MyForeach
 {

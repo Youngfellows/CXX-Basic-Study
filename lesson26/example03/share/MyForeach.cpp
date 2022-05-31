@@ -53,16 +53,7 @@ void MyForeach::testForeach1()
 void MyForeach::testForeach2()
 {
     cout << "testForeach2():: ..." << endl;
-    // for(int num in this->nums)
-    // {
-    //     cout << num << "\t";
-    // }
-    // cout << endl;
-    
-    // for(string city in this->citys)
-    // {
-    //     cout << city << "\t";
-    // }
-    // cout << endl;
+    //for_each(this->nums,this->nums + SIZE,Display<int>());//不执行
+    cout << endl;
     cout << endl;
 }
