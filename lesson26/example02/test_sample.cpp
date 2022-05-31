@@ -2,9 +2,9 @@
 
 int main()
 {
-    //testVector();
-    //testList();
-    //testPair();
+    testVector();
+    testList();
+    testPair();
     testMap();
 
     return 0;
