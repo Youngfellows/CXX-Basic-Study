@@ -2,11 +2,13 @@
 
 int main()
 {
-    testForeach();
-    testVector();
-    testList();
-    testPair();
-    testMap();
+    //testStack();
+    testQueue();
+    // testForeach();
+    // testVector();
+    // testList();
+    // testPair();
+    // testMap();
 
     return 0;
 }

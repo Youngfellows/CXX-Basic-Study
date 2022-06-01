@@ -1,5 +1,19 @@
 #include "../include/Sample.h"
 
+void testStack()
+{
+    stackTest1();
+    // stackTest2();
+    // stackTest3();
+    // stackTest4(); 
+}
+
+void testQueue()
+{
+    queueTest1();
+    dequeTest1();
+}
+
 void testForeach()
 {
     testForeach1();

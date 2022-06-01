@@ -6,8 +6,11 @@
 #include "./SamplePair.h"
 #include "./SampleMap.h"
 #include "./SampleForeach.h"
+#include "./SampleStack.h"
+#include "./SampleQueue.h"
 
-
+void testStack();
+void testQueue();
 void testForeach();
 void testVector();
 void testList();

@@ -4,6 +4,9 @@
 #include "./Global.h"
 
 //定义接口
+bool compare(int a,int b);//排序规则
+
+//定义接口
 void vectorTest1();
 void vectorTest2();
 void vectorTest3();
