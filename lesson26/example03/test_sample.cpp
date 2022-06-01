@@ -3,10 +3,10 @@
 int main()
 {
     //testStack();
-    testQueue();
+    //testQueue();
     // testForeach();
     // testVector();
-    // testList();
+    testList();
     // testPair();
     // testMap();
 
