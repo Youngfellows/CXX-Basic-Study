@@ -244,14 +244,172 @@ void listTest4()
 {
     cout << "listTest4():: ..." << endl;
    
+    //初始化list,动态申请内存
+    list<string> *city = new list<string>();
+
+    //插入元素
+    city->push_back("深圳");
+    city->push_back("武汉");
+    city->push_back("广州");//在list的末尾添加一个元素 
+    city->push_front("北京");//在list的头部添加一个元素 
+    city->push_front("重庆");
+    city->push_front("成都");
+
+    //插入元素
+    list<string>::iterator iter = city->begin();
+    iter++;
+    iter++;
+    city->insert(iter,"上海");
+
+    //是否为空
+    bool isEmpty = city->empty();
+    int size = city->size();
+    cout << "是否为空,isEmpty:" << isEmpty << ",大小,size:" << size << endl;
+
+
+    //遍历元素 - 使用迭代器
+    for(iter = city->begin(); iter != city->end(); iter++)
+    {
+        string ele = *iter;//获取元素
+        cout << ele << " ";
+    }
     cout << endl;
+
+    //遍历元素并删除
+    // while(!city->empty())
+    // {
+    //     string ele = city->back();//获取链表最后一个元素
+    //     cout << ele << " ";
+    //     city->pop_back();//删除最后一个元素
+    // }
+    // cout << endl;
+
+    // while(!city->empty())
+    // {
+    //     string ele = city->front();//获取链表第一个元素
+    //     cout << ele << " ";
+    //     city->pop_front();//删除第一个元素
+    // }
+    // cout << endl;
+
+    //遍历元素并删除
+    for(iter = city->begin(); iter != city->end(); iter++)
+    {
+        //删除元素
+        if(*iter == "广州")
+        {
+            //city->erase(iter);//删除指定元素
+            //city->erase(iter);//有bug
+            city->remove(*iter);
+            cout << "remove" << endl;
+            break;
+        }
+    }
+
+    //遍历元素
+    for(iter = city->begin(); iter != city->end(); iter++)
+    {
+        string ele = *iter;//获取元素
+        cout << ele << " ";
+    }
+    cout << endl;
+
+    isEmpty = city->empty();
+    size = city->size();
+    cout << "是否为空,isEmpty:" << isEmpty << ",大小,size:" << size << endl;
+
+    cout << endl;
+    //释放内存
+    delete city;
 }
 
 void listTest5()
 {
     cout << "listTest5():: ..." << endl;
-  
+     
+    //初始化list,动态申请内存
+    list<string> *city = new list<string>();
+
+    //插入元素
+    city->push_back("深圳");
+    city->push_back("武汉");
+    city->push_back("广州");//在list的末尾添加一个元素 
+    city->push_front("北京");//在list的头部添加一个元素 
+    city->push_front("重庆");
+    city->push_front("成都");
+
+    //插入元素
+    list<string>::iterator iter = city->begin();
+    iter++;
+    iter++;
+    city->insert(iter,"上海");
+
+    //是否为空
+    bool isEmpty = city->empty();
+    int size = city->size();
+    cout << "是否为空,isEmpty:" << isEmpty << ",大小,size:" << size << endl;
+
+
+    //遍历元素 - 使用迭代器
+    for(iter = city->begin(); iter != city->end(); iter++)
+    {
+        string ele = *iter;//获取元素
+        cout << ele << " ";
+    }
     cout << endl;
+
+    //遍历元素并删除
+    // while(!city->empty())
+    // {
+    //     string ele = city->back();//获取链表最后一个元素
+    //     cout << ele << " ";
+    //     city->pop_back();//删除最后一个元素
+    // }
+    // cout << endl;
+
+    // while(!city->empty())
+    // {
+    //     string ele = city->front();//获取链表第一个元素
+    //     cout << ele << " ";
+    //     city->pop_front();//删除第一个元素
+    // }
+    // cout << endl;
+
+    //遍历元素并删除
+    for(iter = city->begin(); iter != city->end(); iter++)
+    {
+        //删除元素
+        if(*iter == "广州")
+        {
+            //city->erase(iter);//删除指定元素
+            //city->erase(iter);//有bug
+            city->remove_if(event);
+            cout << "remove" << endl;
+            break;
+        }
+    }
+
+    //遍历元素
+    for(iter = city->begin(); iter != city->end(); iter++)
+    {
+        string ele = *iter;//获取元素
+        cout << ele << " ";
+    }
+    cout << endl;
+
+    isEmpty = city->empty();
+    size = city->size();
+    cout << "是否为空,isEmpty:" << isEmpty << ",大小,size:" << size << endl;
+
+    cout << endl;
+    //释放内存
+    delete city;
+}
+
+//按条件移除
+bool event(const string &city)
+{
+    return ((city == "武汉") || (city == "北京"));
 }
 
 void listTest6()

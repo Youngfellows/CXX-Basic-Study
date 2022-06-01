@@ -4,6 +4,9 @@
 #include "./Global.h"
 
 //定义接口
+bool event(const string &city);
+
+//定义接口
 void listTest1();
 void listTest2();
 void listTest3();
