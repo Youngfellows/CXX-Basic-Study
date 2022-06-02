@@ -4,6 +4,7 @@
 #include "./Global.h"
 #include "./Student.h"
 #include "./Student2.h"
+#include "./Sort.h"
 
 void mapTest1();
 void mapTest2();

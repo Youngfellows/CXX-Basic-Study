@@ -8,6 +8,7 @@
 #include "./SampleForeach.h"
 #include "./SampleStack.h"
 #include "./SampleQueue.h"
+#include "./SampleSet.h"
 
 void testStack();
 void testQueue();
@@ -16,5 +17,6 @@ void testVector();
 void testList();
 void testPair();
 void testMap();
+void testSet();
 
 #endif

@@ -80,4 +80,14 @@ void testMap()
     mapTest9();
 }
 
+void testSet()
+{
+    //set测试
+    setTest1();
+    setTest2();
+    setTest3();
+    setTest4();
+    setTest5();
+}
+
 

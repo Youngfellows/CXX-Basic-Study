@@ -391,40 +391,40 @@ void mapTest5()
 {
     cout << "mapTest5():: ..." << endl;
     //自定义sort排序,创建map,动态申请内存
-    // map<Student2,double> *mapStudent = new map<Student2,double>();
+    map<Student2,double,Sort> *mapStudent = new map<Student2,double,Sort>();
 
     // //添加元素
-    // Student2 student;
-    // student.id = 1004;
-    // student.name = "张无忌";
-    // mapStudent->insert(pair<Student2,double>(student,88.5)); 
+    Student2 student;
+    student.id = 1004;
+    student.name = "张无忌";
+    mapStudent->insert(pair<Student2,double>(student,88.5)); 
 
-    // student.id = 1001;
-    // student.name = "周芷若";
-    // mapStudent->insert(pair<Student2,double>(student,99.5)); 
+    student.id = 1001;
+    student.name = "周芷若";
+    mapStudent->insert(pair<Student2,double>(student,99.5)); 
 
-    // student.id = 1002;
-    // student.name = "周伯通";
-    // mapStudent->insert(pair<Student2,double>(student,77.5)); 
+    student.id = 1002;
+    student.name = "周伯通";
+    mapStudent->insert(pair<Student2,double>(student,77.5)); 
 
-    // student.id = 1003;
-    // student.name = "田伯光";
-    // mapStudent->insert(pair<Student2,double>(student,92.5)); 
+    student.id = 1003;
+    student.name = "田伯光";
+    mapStudent->insert(pair<Student2,double>(student,92.5)); 
 
-    // //遍历map
-    // map<Student2,double>::iterator iter;
-    // for(iter = mapStudent->begin(); iter != mapStudent->end(); iter++)
-    // {
-    //     Student2 student = iter->first;//获取key
-    //     double score = iter->second;//获取value
-    //     int id = student.id;
-    //     string name = student.name;
-    //     cout << "学号:" << id << ",姓名:" << name << ",成绩:" << score << endl;
-    // }
+    //遍历map
+    map<Student2,double>::iterator iter;
+    for(iter = mapStudent->begin(); iter != mapStudent->end(); iter++)
+    {
+        Student2 student = iter->first;//获取key
+        double score = iter->second;//获取value
+        int id = student.id;
+        string name = student.name;
+        cout << "学号:" << id << ",姓名:" << name << ",成绩:" << score << endl;
+    }
 
-    // cout << endl;
-    // //释放内存
-    // delete mapStudent;
+    cout << endl;
+    //释放内存
+    delete mapStudent;
 }
 
 void mapTest6()

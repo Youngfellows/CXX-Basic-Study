@@ -8,7 +8,8 @@ int main()
     // testVector();
     // testList();
     // testPair();
-    testMap();
+    //testMap();
+    testSet();
 
     return 0;
 }
