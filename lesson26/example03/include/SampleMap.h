@@ -2,6 +2,8 @@
 #define SAMPLE_MAP_H
 
 #include "./Global.h"
+#include "./Student.h"
+#include "./Student2.h"
 
 void mapTest1();
 void mapTest2();

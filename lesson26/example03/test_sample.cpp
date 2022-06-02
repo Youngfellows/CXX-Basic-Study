@@ -6,9 +6,9 @@ int main()
     //testQueue();
     // testForeach();
     // testVector();
-    testList();
+    // testList();
     // testPair();
-    // testMap();
+    testMap();
 
     return 0;
 }
