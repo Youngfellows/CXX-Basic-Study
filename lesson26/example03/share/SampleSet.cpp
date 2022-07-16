@@ -309,6 +309,9 @@ void setTest3()
     stu->insert(Person(24,"张无忌"));
     stu->insert(Person(88,"张三丰"));
     stu->insert(Person(27,"赵敏"));
+    
+    //求大小
+    stu->size();
 
     //遍历元素
     set<Person,ComparePerson>::iterator iter;
