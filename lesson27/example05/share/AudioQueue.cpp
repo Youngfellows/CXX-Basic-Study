@@ -91,8 +91,8 @@ void AudioQueue::put(std::shared_ptr<Audio> audio)
 
     mCacheAudio->push(std::move(audio)); //生产产品,插入数据,添加数据到容器列表,右值插入数据
 
+    uniqueLock.unlock();                   //先释放锁,再通知
     mConsumerThreadSemaphore.notify_all(); //唤醒消费者线程被挂起的wait函数,是消费者线程能继续执行
-    uniqueLock.unlock();                   //释放锁
 }
 
 /**
@@ -117,7 +117,7 @@ std::shared_ptr<Audio> AudioQueue::get()
     // std::thread::id threadId = std::this_thread::get_id();
     int id = syscall(SYS_gettid);
     cout << "AudioQueue::get()::  threadId:" << id << ",消费了了,id:" << audio->getId() << ",data:" << audio->getData() << endl;
+    uniqueLock.unlock();                   //先释放锁,再通知
     mProducerThreadSemaphore.notify_all(); //唤醒生产者线程被挂起的wait()函数,使生产者线程能继续往下执行
-    uniqueLock.unlock();                   //释放锁
     return audio;                          //返回要消费的数据
 }
