@@ -3,8 +3,10 @@
 
 #include "./Global.h"
 #include "./Audio.h"
+#include "./AudioFlinger.h"
+#include "./AudioQueue.h"
 
-void audioCallback(Audio audio); //回调函数
+void audioCallback(std::shared_ptr<Audio> audio); //回调函数
 
 void test1();
 void test2();
