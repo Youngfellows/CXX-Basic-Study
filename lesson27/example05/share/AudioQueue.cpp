@@ -63,7 +63,7 @@ void AudioQueue::feedAudioEngin()
         {
             mAudioCallback(audio);
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000)); //休眠110毫秒
+        std::this_thread::sleep_for(std::chrono::milliseconds(1500)); //休眠110毫秒
     }
 }
 
@@ -114,7 +114,7 @@ std::shared_ptr<Audio> AudioQueue::get()
     //其实可以不用判空了,不为空才能走到这里
     std::shared_ptr<Audio> audio = std::move(mCacheAudio->front()); //取出头部数据
     mCacheAudio->pop();                                             //移除已经消费的数据
-    //std::thread::id threadId = std::this_thread::get_id();
+    // std::thread::id threadId = std::this_thread::get_id();
     int id = syscall(SYS_gettid);
     cout << "AudioQueue::get()::  threadId:" << id << ",消费了了,id:" << audio->getId() << ",data:" << audio->getData() << endl;
     mProducerThreadSemaphore.notify_all(); //唤醒生产者线程被挂起的wait()函数,使生产者线程能继续往下执行
