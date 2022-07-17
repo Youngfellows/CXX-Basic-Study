@@ -9,6 +9,7 @@ AudioProducerConsumer::AudioProducerConsumer(AudioCallback callback)
     this->mProThreads = std::make_shared<std::vector<std::shared_ptr<std::thread>>>();
     this->mConsThreads = std::make_shared<std::vector<std::shared_ptr<std::thread>>>();
     this->mAudioBlockQueue = std::make_shared<AudioBlockQueue>();
+    srand(time(0));
 }
 
 AudioProducerConsumer::~AudioProducerConsumer()
@@ -76,6 +77,7 @@ void AudioProducerConsumer::run()
     {
         cThread->join();
     }
+    mAudioBlockQueue->stop();
 }
 
 /**
@@ -92,9 +94,9 @@ void AudioProducerConsumer::consumer(std::shared_ptr<AudioBlockQueue> audioBlock
 
     while (audioBlockQueue->available())
     {
-        //cout << "AudioProducerConsumer::consumer():: 111 ..." << endl;
+        // cout << "AudioProducerConsumer::consumer():: 111 ..." << endl;
         std::shared_ptr<Audio> audio = audioBlockQueue->pop();
-        //cout << "AudioProducerConsumer::consumer():: 2222 ..." << endl;
+        // cout << "AudioProducerConsumer::consumer():: 2222 ..." << endl;
         if (audio != nullptr)
         {
             cout << "AudioProducerConsumer::consumer():: 消费音频:" << audio->toString() << endl;
@@ -118,11 +120,24 @@ void AudioProducerConsumer::producer(std::shared_ptr<AudioBlockQueue> audioBlock
     cout << "AudioProducerConsumer::producer():: audioBlockQueue=" << audioBlockQueue << endl;
     cout << "AudioProducerConsumer::producer():: start:" << start << ",maxNum:" << maxNum << endl;
     //在这里尽情的生产数据吧
-    int i = 0;
-    while (i++ < maxNum)
+    // int i = 0;
+    // while (i++ < maxNum)
+    // {
+    //     //模拟组装音频数据
+    //     int id = i + start; //编号
+    //     std::string message = "报警音音频数据";
+    //     std::ostringstream oss;
+    //     oss << message << id; //字符串拼接,
+    //     std::string data = oss.str();
+    //     std::shared_ptr<Audio> audio = std::make_shared<Audio>(id, data);
+    //     audioBlockQueue->push(audio);
+    //     std::this_thread::sleep_for(std::chrono::milliseconds(1000)); //休眠1000毫秒
+    // }
+
+    while (!mAudioBlockQueue->stopped())
     {
         //模拟组装音频数据
-        int id = i + start; //编号
+        int id = rand() % 100; //产生0 ~ 100的随机数
         std::string message = "报警音音频数据";
         std::ostringstream oss;
         oss << message << id; //字符串拼接,
@@ -131,6 +146,7 @@ void AudioProducerConsumer::producer(std::shared_ptr<AudioBlockQueue> audioBlock
         audioBlockQueue->push(audio);
         std::this_thread::sleep_for(std::chrono::milliseconds(1000)); //休眠1000毫秒
     }
+
     std::thread::id threadId = std::this_thread::get_id(); //获取线程ID方式2
     cout << "threadId:" << threadId << "线程生产产品完成 ..." << endl;
 }

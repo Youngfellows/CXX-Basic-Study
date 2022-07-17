@@ -25,10 +25,10 @@ public:
     std::shared_ptr<Audio> pop();            //取出队列中的音频数据
     void stop();                             //停止插入数据
     bool available();                        // 队列是否可用
+    bool stopped();                          //是否停止插入数据
 
 private:
-    bool stopped(); //是否停止插入数据
-    bool empty();   //队列是否为空
-    bool full();    //队列是否满了
+    bool empty(); //队列是否为空
+    bool full();  //队列是否满了
 };
 #endif
