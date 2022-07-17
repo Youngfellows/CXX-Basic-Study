@@ -14,8 +14,10 @@ private:
     std::string data; //数据内容
 
 public:
+    Audio();
     Audio(int id, std::string data);
     ~Audio();
+    void set(int id, std::string data);
     int getId();
     std::string getData();
     void toString();

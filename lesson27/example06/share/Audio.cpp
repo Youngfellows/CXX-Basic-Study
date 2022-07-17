@@ -1,5 +1,9 @@
 #include "../include/Audio.h"
 
+Audio::Audio()
+{
+}
+
 Audio::Audio(int id, std::string data)
 {
     // cout << "Audio()构造函数" << endl;
@@ -10,6 +14,12 @@ Audio::Audio(int id, std::string data)
 Audio::~Audio()
 {
     // cout << "~Audio()析构函数" << endl;
+}
+
+void Audio::set(int id, std::string data)
+{
+    this->id = id;
+    this->data = data;
 }
 
 int Audio::getId()
