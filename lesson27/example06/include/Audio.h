@@ -20,6 +20,6 @@ public:
     void set(int id, std::string data);
     int getId();
     std::string getData();
-    void toString();
+    std::string toString();
 };
 #endif

@@ -32,7 +32,9 @@ std::string Audio::getData()
     return this->data;
 }
 
-void Audio::toString()
+std::string Audio::toString()
 {
-    cout << "id:" << this->id << ",data:" << this->data << endl;
+    std::stringstream oss;
+    oss << "[id:" << this->id << ",data:" << this->data << "]";
+    return oss.str();
 }

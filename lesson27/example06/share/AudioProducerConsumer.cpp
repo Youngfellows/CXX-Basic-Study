@@ -79,7 +79,10 @@ void AudioProducerConsumer::run()
 void AudioProducerConsumer::consumer(std::shared_ptr<AudioBlockQueue> audioBlockQueue)
 {
     cout << "AudioProducerConsumer::consumer():: ..." << endl;
-    //在这里尽情的生产数据吧
+    //在这里尽情的消费数据吧
+    std::shared_ptr<Audio> audio = std::make_shared<Audio>(); //接收数据的智能指针
+    audioBlockQueue->pop(audio);
+    cout << "AudioProducerConsumer::consumer():: " <<  audio->toString() << endl;
 }
 
 /**
@@ -93,7 +96,7 @@ void AudioProducerConsumer::consumer(std::shared_ptr<AudioBlockQueue> audioBlock
 void AudioProducerConsumer::producer(std::shared_ptr<AudioBlockQueue> audioBlockQueue, int start, int maxNum)
 {
     cout << "AudioProducerConsumer::producer():: start:" << start << ",maxNum:" << maxNum << endl;
-    //在这里尽情的消费数据吧
+    //在这里尽情的生产数据吧
 }
 
 /**

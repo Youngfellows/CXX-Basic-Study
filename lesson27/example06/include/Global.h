@@ -14,6 +14,7 @@
 #include <sstream>
 #include <queue>
 #include <atomic>
+#include <sstream>
 
 #include <unistd.h>      // for syscall()
 #include <sys/syscall.h> // for SYS_xxx definitions

@@ -5,10 +5,10 @@
  *
  * @param audio
  */
-void audioCallback(const Audio &audio)
+void audioCallback(std::shared_ptr<Audio> audio)
 {
-    // audio.toString();
-    //cout << "audioCallback:: audio data,id:" << audio.getId() << ",data:" << audio.getData() << endl;
+    audio->toString();
+    cout << "audioCallback:: audio data,id:" << audio->getId() << ",data:" << audio->getData() << endl;
 }
 
 void test1()
