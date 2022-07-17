@@ -85,7 +85,8 @@ void AudioBlockQueue::push(std::shared_ptr<Audio> audio)
     //如果容器是满的,则等待消费者线程消费
     while (full())
     {
-        mConsCondition.notify_all();    //通知消费者线程进行消费
+        mConsCondition.notify_all(); //通知消费者线程进行消费
+        cout << "AudioBlockQueue::push():: wait ..." << endl;
         mProCondition.wait(uniqueLock); //生产者线程释放锁,并挂起等待,直到一个线程的mProCondition.notify_all()后唤起再继续往下执行
     }
     int id = syscall(SYS_gettid);                          //获取线程ID方式1
@@ -102,16 +103,16 @@ void AudioBlockQueue::push(std::shared_ptr<Audio> audio)
  *
  * @param audio 取出的音频数据保存到audio中
  */
-void AudioBlockQueue::pop(std::shared_ptr<Audio> audio)
+std::shared_ptr<Audio> AudioBlockQueue::pop()
 {
-    cout << "AudioBlockQueue::pop():: ..." << endl;
+    // cout << "AudioBlockQueue::pop():: ..." << endl;
     std::unique_lock<std::mutex> uniqueLock(mMutex); //抢占锁
     //若干容器是空的,如若没有停止插入数据,则等待生产者线程生产数据,然后再消费
     while (empty())
     {
         if (stopped())
         {
-            return; //跳出pop函数,获取是接收while()循环
+            return nullptr; //跳出pop函数,获取是接收while()循环
         }
         cout << "AudioBlockQueue::pop():: wait ..." << endl;
         //通知生产者线程生产产品
@@ -122,18 +123,22 @@ void AudioBlockQueue::pop(std::shared_ptr<Audio> audio)
         bool block = this->stopped() || !this->empty();
         cout << "AudioBlockQueue::pop():: block:" << block << endl;
         //消费者线程释放锁,并挂起,直到生产者线程调用mConsCondition.notify_all()成员函数才唤醒被继续往下执行
+        // mConsCondition.wait(uniqueLock, block);
         mConsCondition.wait(uniqueLock, [this]()
                             { return this->stopped() || !this->empty(); });
     }
-    // audio->set(1, "报警音频数据");
-    //其实可以不用判空了,不为空才能走到这里
-    std::shared_ptr<Audio> popAudio = std::move(mCaches->front()); //取出头部数据
-    audio->set(popAudio->getId(), popAudio->getData());            //回到获取到的数据
-    mCaches->pop();                                                //移除已经消费的数据
-    int id = syscall(SYS_gettid);                                  //获取线程ID方式1
-    std::thread::id threadId = std::this_thread::get_id();         //获取线程ID方式2
-    cout << "AudioBlockQueue::pop():: id:" << id << ",threadId:" << threadId << ",数据:" << audio->toString() << endl;
-
+    std::shared_ptr<Audio> audio = nullptr;
+    if (!empty())
+    {
+        // audio->set(1, "报警音频数据");
+        //其实可以不用判空了,不为空才能走到这里
+        audio = std::move(mCaches->front());                   //取出头部数据
+        mCaches->pop();                                        //移除已经消费的数据
+        int id = syscall(SYS_gettid);                          //获取线程ID方式1
+        std::thread::id threadId = std::this_thread::get_id(); //获取线程ID方式2
+        cout << "AudioBlockQueue::pop():: id:" << id << ",threadId:" << threadId << ",数据:" << audio->toString() << endl;
+    }
     mProCondition.notify_all(); //通知生产者线程可用进行产品生产了
     uniqueLock.unlock();        //释放锁
+    return audio;
 }

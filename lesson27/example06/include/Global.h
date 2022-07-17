@@ -22,7 +22,7 @@
 using namespace std;
 
 //定义常量
-const int MAX_CACHES_SIZE = 10;       //最大缓存数量
+const int MAX_CACHES_SIZE = 256;       //最大缓存数量
 const int PRODUCER_THREAD_NUMBER = 5; //生产者线程数
 const int CONSUMER_THREAD_NUMBER = 8; //消费者线程数
 
