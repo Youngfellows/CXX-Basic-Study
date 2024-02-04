@@ -27,6 +27,7 @@ void queueTest1()
     queueAnimal->push("大黄狗");
     queueAnimal->push("母老虎");
     queueAnimal->push("大象");
+  
 
     //判断队列是否为空
     bool isEmpty = queueAnimal->empty();
