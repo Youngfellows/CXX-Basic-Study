@@ -10,14 +10,14 @@
 void printNumbers(int count, ...) {
     va_list ap;
     // 初始化ap，指向可变参数列表的第一个参数
-            va_start(ap, count);
+    va_start(ap, count);
     for (int i = 0; i < count; ++i) {
         // 依次获取可变参数列表中的参数
         int num = va_arg(ap, int);
         printf("%d ", num);
     }
     // 结束args的使用
-            va_end(ap);
+    va_end(ap);
     printf("\n");
 }
 
@@ -27,13 +27,13 @@ void printNumbers(int count, ...) {
  * @param ...
  * @return
  */
-std::string format(const char *pFmt, ...) {
+std::string format(const char* pFmt, ...) {
 #define FORMAT_MSG_BUFFER_SIZE (2048000)
-    char szBuffer[FORMAT_MSG_BUFFER_SIZE + 1] = {0};
+    char szBuffer[FORMAT_MSG_BUFFER_SIZE + 1] = { 0 };
     va_list args;
-     va_start(args, pFmt);
+    va_start(args, pFmt);
     vsnprintf(szBuffer, FORMAT_MSG_BUFFER_SIZE, pFmt, args);
-      va_end(args);
+    va_end(args);
     std::string strRet = szBuffer;
     //printf("%s", strRet.c_str());
     return strRet;
