@@ -6,10 +6,10 @@ int main()
     //testQueue();
     // testForeach();
     // testVector();
-    // testList();
+    testList();
     // testPair();
     //testMap();
-    testSet();
+    //testSet();
 
     return 0;
 }
